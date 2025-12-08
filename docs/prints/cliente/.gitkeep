@@ -1,0 +1,29 @@
+# Pasta para Screenshots da Área do Cliente
+
+Esta pasta deve conter capturas de tela das principais funcionalidades da área do cliente:
+
+## Screenshots Recomendadas:
+
+1. **catalogo.png** - Página inicial com catálogo de produtos
+2. **produto-detalhes.png** - Tela de detalhes de um produto
+3. **busca-filtros.png** - Sistema de busca e filtros em uso
+4. **carrinho.png** - Carrinho de compras com produtos
+5. **checkout-dados.png** - Etapa de preenchimento de dados pessoais
+6. **checkout-endereco.png** - Etapa de endereço de entrega
+7. **checkout-cupom.png** - Aplicação de cupom de desconto
+8. **checkout-pagamento.png** - Seleção de método de pagamento
+9. **pedido-confirmacao.png** - Tela de confirmação do pedido
+10. **historico-pedidos.png** - Lista de pedidos do cliente
+11. **rastreamento.png** - Tela de rastreamento com timeline
+12. **avaliacoes.png** - Sistema de avaliações
+13. **perfil.png** - Página de perfil do usuário
+14. **mobile-catalogo.png** - Versão mobile do catálogo
+15. **mobile-carrinho.png** - Versão mobile do carrinho
+
+## Como Adicionar:
+
+1. Acesse o sistema publicado
+2. Navegue até cada tela
+3. Tire screenshots (F12 ou Print Screen)
+4. Salve com nomes descritivos
+5. Adicione nesta pasta
