@@ -80,7 +80,7 @@ A pasta `/docs/prints` contém screenshots das principais telas:
 
 O sistema está acessível online através da plataforma Base44:
 
-> **Link da Aplicação:** `[INSERIR LINK AQUI]`
+> **Link da Aplicação:** `https://cupcake-delight-ebdbb888.base44.app`
 
 Para acessar o sistema em funcionamento, utilize o link acima. A aplicação está hospedada e mantida pela Base44.
 

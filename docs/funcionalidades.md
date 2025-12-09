@@ -118,12 +118,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   
 - **Remover Item**:
   - Botão "Remover" ou ícone de lixeira
-  - Confirmação antes de remover (opcional)
   - Atualização automática do total
-
-- **Limpar Carrinho**:
-  - Opção para esvaziar todo o carrinho
-  - Confirmação obrigatória
 
 #### 3.4 Informações Adicionais
 - Mensagem se carrinho estiver vazio
@@ -158,10 +153,8 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Nome completo (preenchido automaticamente se logado)
   - Email
   - Telefone
-  - CPF
 - **Validações:**
   - Formato de email válido
-  - CPF válido
   - Telefone no formato correto
   - Todos os campos obrigatórios preenchidos
 
@@ -200,8 +193,9 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - 💰 Pix (QR Code simulado)
   - 💳 Cartão de Crédito (dados simulados)
   - 📄 Boleto (código de barras simulado)
+  - **Apenas a simulação do pagamento por pix está disponível.**
 
-- **Cartão de Crédito:**
+- **Cartão de Crédito:** (Não Implementado)
   - Número do cartão
   - Nome do titular
   - Data de validade
@@ -209,6 +203,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Número de parcelas
 
 #### 4.6 Etapa 6: Confirmação
+- Está disponível apenas para o pagamento por pix "Simular Pagamento Aprovado" 
 - Resumo completo do pedido
 - Termos e condições (checkbox obrigatório)
 - Botão "Finalizar Pedido"
@@ -265,16 +260,13 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - **Detalhes do Pedido:**
   - Todos os itens comprados (nome, quantidade, preço)
   - Endereço de entrega
-  - Dados de pagamento
   - Histórico de mudanças de status (timeline)
-  - Botão "Avaliar Pedido/Produtos"
-  - Opção de "Fazer Pedido Novamente" (adiciona itens ao carrinho)
 
 **Fluxo de Uso:**
 ```
 1. Cliente acessa "Meus Pedidos"
 2. Sistema lista todos os pedidos do cliente
-3. Cliente pode filtrar por status ou data
+3. Cliente pode filtrar por status ou data (Não Implementado)
 4. Cliente clica em "Ver Detalhes" de um pedido
 5. Sistema exibe informações completas do pedido
 6. Cliente pode acompanhar status ou fazer nova compra
@@ -288,15 +280,15 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 **Status Disponíveis:**
 
-1. **🔵 Pedido Recebido / Pendente**
+1. **🔵 Aguardando Pagamento**
    - Pedido registrado no sistema
    - Pagamento aguardando confirmação
 
-2. **🟡 Preparando**
+2. **🟡 Em Preparo**
    - Pagamento confirmado
    - Pedido em preparação na cozinha
 
-3. **🟠 Em Entrega / Saiu para Entrega**
+3. **🟠 Em Rota**
    - Pedido despachado
    - A caminho do endereço do cliente
 
@@ -304,7 +296,8 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
    - Pedido entregue ao cliente
    - Finalizado com sucesso
 
-5. **🔴 Cancelado** (se aplicável)
+5. **🔴 Cancelado** 
+   - Existe o Status mas não tem botão para o cliente cancelar o pedido
    - Pedido cancelado
    - Motivo do cancelamento
 
@@ -317,8 +310,8 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 - **Informações Adicionais:**
   - Data e hora de cada mudança de status
-  - Previsão de entrega
-  - Código de rastreamento (se aplicável)
+  - Previsão de entrega (Não Implementado)
+  - Código de rastreamento (Não Implementado)
 
 **Fluxo de Uso:**
 ```
@@ -326,7 +319,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 2. Cliente clica no pedido desejado
 3. Sistema exibe status atual e histórico
 4. Cliente pode atualizar a página para ver mudanças
-5. Cliente recebe notificação visual de mudanças (opcional)
+5. Cliente recebe notificação visual de mudanças (Não Implementado)
 ```
 
 ---
@@ -392,13 +385,13 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - Botão "Salvar Alterações"
 
 #### 8.2 Endereços
-- Lista de endereços cadastrados
+- Lista de endereços cadastrados (Não Implementado)
 - Para cada endereço:
-  - Identificação (Casa, Trabalho, etc.)
+  - Identificação (Casa, Trabalho, etc.) (Não Implementado)
   - Endereço completo
-  - Opção de marcar como padrão
-  - Botões "Editar" e "Excluir"
-- Botão "Adicionar Novo Endereço"
+  - Opção de marcar como padrão (Não Implementado)
+  - Botões "Editar" e "Excluir" (Não Implementado)
+- Botão "Adicionar Novo Endereço" (Não Implementado)
 
 #### 8.3 Segurança
 - **Alterar Senha:**
@@ -411,7 +404,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Botão para sair da conta
   - Confirmação opcional
 
-#### 8.4 Histórico de Atividades
+#### 8.4 Histórico de Atividades (Não Implementado)
 - Últimos pedidos realizados
 - Últimas avaliações feitas
 - Data do último login
@@ -444,38 +437,25 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 1. **Total de Vendas (Hoje)**
    - Valor total em R$
-   - Comparação com dia anterior (% ↑ ou ↓)
 
-2. **Total de Vendas (Mês)**
-   - Valor total do mês atual
-   - Comparação com mês anterior
-
-3. **Total de Pedidos (Hoje)**
+2. **Total de Pedidos (Hoje)**
    - Quantidade de pedidos
-   - Variação em relação ao dia anterior
+   - Quantidade de pedidos Pendentes
 
-4. **Total de Pedidos (Mês)**
-   - Quantidade do mês
-   - Tendência
-
-5. **Ticket Médio**
-   - Valor médio por pedido
-   - Comparação com média geral
-
-6. **Taxa de Conversão**
-   - % de visitantes que compraram
-   - Tendência
+3. **Produtos**
+   - Quantidade total de produtos
+   - Alerta para produtos com estoque baixo
 
 **Gráficos:**
 
 1. **Vendas ao Longo do Tempo**
    - Gráfico de linha
-   - Últimos 7 dias / 30 dias / 12 meses
+   - Definição da quantidade de dias
    - Valor total por dia/mês
 
 2. **Pedidos por Status**
    - Gráfico de pizza ou donut
-   - Distribuição: Pendente, Preparando, Em Entrega, Entregue
+   - Distribuição: Aguardando Pagamento, Em Preparo, Em Rota, Entregue
 
 3. **Produtos Mais Vendidos**
    - Gráfico de barras horizontal
@@ -491,12 +471,10 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 1. **Últimos Pedidos**
    - 10 pedidos mais recentes
    - Número, cliente, valor, status
-   - Link para detalhes
 
 2. **Produtos com Estoque Baixo**
    - Produtos abaixo do estoque mínimo
    - Alerta visual
-   - Link para editar
 
 **Fluxo de Uso:**
 ```
@@ -640,44 +618,26 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Estoque mínimo
   - Status (indicador visual)
 - Cores/ícones:
-  - 🔴 Vermelho: Estoque crítico (abaixo do mínimo)
-  - 🟡 Amarelo: Estoque baixo (próximo ao mínimo)
-  - 🟢 Verde: Estoque ok
+  - Sem alteração se tiver estoque
+  - Ícone de Aviso com pouco estoque
 
 #### 11.2 Atualização Rápida
 - Campo editável inline na tabela
-- Incremento/decremento rápido (+10, -10)
-- Atualização em lote
 - Botão "Salvar Alterações"
 
 #### 11.3 Entrada de Estoque
 - Formulário dedicado:
-  - Selecionar produto
-  - Quantidade a adicionar
-  - Motivo (Compra, Produção, Correção)
-  - Data de entrada
-  - Observações
-- Histórico de entradas
-
-#### 11.4 Alertas
-- Notificações automáticas:
-  - Produtos abaixo do estoque mínimo
-  - Produtos zerados
-  - Produtos sem movimento há X dias
-- Dashboard de alertas
-- Envio de email/notificação (opcional)
-
-#### 11.5 Relatórios de Estoque
-- Estoque atual por categoria
-- Movimentação de estoque (entradas/saídas)
-- Produtos mais vendidos vs estoque
-- Previsão de reposição
-- Exportação de relatórios
+  - Nome
+  - Descrição
+  - Sabor
+  - Preço
+  - Estoque
+  - Imagem
 
 **Fluxo de Uso:**
 ```
-1. Admin acessa "Gestão de Estoque"
-2. Sistema lista produtos com status de estoque
+1. Admin acessa "Produtos"
+2. Sistema lista produtos com status "Ativo" ou "Inativo"
 3. Admin identifica produtos com estoque baixo
 4. Admin registra entrada de estoque:
    - Seleciona produto
@@ -705,21 +665,13 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Cliente (nome)
   - Valor total
   - Status (com cor)
-  - Método de pagamento
   - Ações
 
 **Filtros:**
-- Por status (Pendente, Preparando, Em Entrega, Entregue, Cancelado)
-- Por data (Hoje, Esta semana, Este mês, Período customizado)
-- Por cliente (busca por nome)
-- Por valor (faixa de preço)
-- Por método de pagamento
+- Por status (Todos, Aguardando, Preparo, Em Rota, Entregue, Cancelado)
 
 **Ordenação:**
 - Mais recentes primeiro (padrão)
-- Mais antigos primeiro
-- Maior valor
-- Menor valor
 - Por status
 
 **Paginação:**
@@ -737,14 +689,11 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 2. **Dados do Cliente:**
    - Nome
-   - Email
    - Telefone
-   - CPF
 
 3. **Endereço de Entrega:**
    - Endereço completo
    - CEP
-   - Observações
 
 4. **Itens do Pedido:**
    - Tabela com produtos
@@ -757,7 +706,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
    - Desconto (se houver cupom)
    - **Total Final**
 
-6. **Informações de Pagamento:**
+6. **Informações de Pagamento:** (Não Implementado)
    - Método escolhido
    - Status do pagamento
    - Data de confirmação (se aplicável)
@@ -766,7 +715,6 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 7. **Histórico de Status:**
    - Timeline com todas as mudanças
    - Data/hora de cada mudança
-   - Usuário que alterou (se aplicável)
 
 #### 12.3 Atualização de Status
 
@@ -777,18 +725,18 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - Registro automático no histórico
 
 **Opções de Status:**
-1. **Pendente** → **Preparando**
-2. **Preparando** → **Em Entrega**
-3. **Em Entrega** → **Entregue**
-4. Qualquer status → **Cancelado** (com motivo)
+1. **Aguardando Pagamento** → **Em Preparo**
+2. **Em Preparo** → **Em Rota**
+3. **Entregue** → **Cancelado**
+4. Qualquer status → **Cancelado**
 
-**Regras:**
+**Regras:** (Não Implementado)
 - Status deve seguir fluxo lógico
 - Não é possível voltar status (exceto para Cancelado)
 - Cancelamento requer confirmação e motivo
 - Ao marcar como Entregue, pedido é finalizado
 
-#### 12.4 Ações Adicionais
+#### 12.4 Ações Adicionais (Não Implementado)
 
 - **Imprimir Pedido:**
   - Gera versão para impressão
@@ -835,24 +783,12 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - Tabela com todos os cupons
 - Colunas:
   - Código
-  - Descrição
   - Tipo (Percentual/Valor Fixo)
   - Valor do Desconto
   - Validade (Data início - Data fim)
   - Usos (Usado/Total)
   - Status (Ativo/Inativo)
-  - Ações
-
-**Filtros:**
-- Por status (Ativo/Inativo)
-- Por validade (Vigentes, Expirados, Futuros)
-- Por tipo de desconto
-
-**Indicadores Visuais:**
-- 🟢 Cupom ativo e vigente
-- 🟡 Cupom próximo ao vencimento
-- 🔴 Cupom expirado ou inativo
-- 📊 Barra de uso (X de Y usos)
+  - Ações (Remover)
 
 #### 13.2 Criar Cupom
 
@@ -863,41 +799,32 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
    - Sem espaços, maiúsculas
    - Único no sistema
 
-2. **Descrição** (obrigatório)
-   - Breve descrição do cupom
-   - Ex: "10% de desconto na primeira compra"
-
-3. **Tipo de Desconto** (obrigatório)
+2. **Tipo de Desconto** (obrigatório)
    - Radio button:
      - ( ) Percentual (%)
      - ( ) Valor Fixo (R$)
 
-4. **Valor do Desconto** (obrigatório)
+3. **Valor do Desconto** (obrigatório)
    - Se Percentual: 1 a 100
    - Se Valor Fixo: R$ 0,01 ou mais
 
-5. **Valor Mínimo do Pedido** (opcional)
-   - Pedido deve ter valor igual ou superior
-   - Ex: R$ 50,00
-   - Padrão: 0 (sem mínimo)
-
-6. **Período de Validade** (obrigatório)
+4. **Período de Validade** (obrigatório)
    - Data de início
    - Data de fim
    - Validação: data fim >= data início
 
-7. **Quantidade de Usos** (opcional)
+5. **Quantidade de Usos** 
    - Número máximo de vezes que pode ser usado
    - 0 = ilimitado
    - Padrão: 0
 
-8. **Status** (obrigatório)
+6. **Status** (obrigatório)
    - Checkbox: Ativo/Inativo
    - Padrão: Ativo
 
 **Botões:**
-- "Criar Cupom"
-- "Criar e Adicionar Outro"
+- "Novo Cupom"
+- "Criar"
 - "Cancelar"
 
 **Validações:**
@@ -926,9 +853,6 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 **Métricas:**
 - Total de vezes usado
 - Total de desconto concedido (R$)
-- Ticket médio de pedidos com cupom
-- Taxa de conversão
-- Clientes únicos que usaram
 
 **Fluxo de Uso:**
 ```
@@ -938,7 +862,6 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 4. Admin preenche formulário:
    - Define código (ex: NATAL25)
    - Escolhe tipo (25% de desconto)
-   - Define valor mínimo (R$ 50)
    - Define validade (01/12 a 31/12)
    - Define limite (100 usos)
 5. Admin salva cupom
@@ -966,13 +889,9 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - Total de vendas (R$)
 - Quantidade de pedidos
 - Ticket médio
-- Comparação com período anterior
-- Gráfico de vendas por dia
-- Vendas por método de pagamento
 
 **Exportação:**
-- PDF
-- Excel (XLSX)
+- JSON
 - CSV
 
 #### 14.2 Relatório de Produtos
@@ -985,58 +904,8 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 **Dados Exibidos:**
 - Lista de produtos
 - Quantidade vendida de cada
-- Receita gerada por produto
 - Participação no faturamento (%)
 - Produtos mais vendidos (top 10)
-- Produtos menos vendidos (bottom 10)
-
-#### 14.3 Relatório de Clientes
-
-**Dados Exibidos:**
-- Total de clientes cadastrados
-- Novos clientes no período
-- Clientes ativos (que compraram)
-- Clientes inativos
-- Top 10 clientes (maior valor de compras)
-- Ticket médio por cliente
-
-#### 14.4 Relatório de Estoque
-
-**Dados Exibidos:**
-- Estoque atual por produto
-- Valor total do estoque
-- Produtos com estoque baixo
-- Produtos sem movimento
-- Movimentação de estoque no período
-
-#### 14.5 Relatório de Cupons
-
-**Dados Exibidos:**
-- Cupons criados
-- Cupons utilizados
-- Total de desconto concedido
-- Impacto no faturamento
-- Cupons mais usados
-
-**Interface:**
-- Seleção do tipo de relatório
-- Configuração de filtros
-- Botão "Gerar Relatório"
-- Visualização prévia na tela
-- Botões de exportação
-
-**Fluxo de Uso:**
-```
-1. Admin acessa "Relatórios"
-2. Admin seleciona tipo de relatório desejado
-3. Admin configura filtros (ex: período do último mês)
-4. Admin clica em "Gerar Relatório"
-5. Sistema processa dados
-6. Sistema exibe relatório na tela
-7. Admin analisa informações
-8. Admin pode exportar em PDF/Excel
-9. Relatório é baixado
-```
 
 ---
 
@@ -1071,7 +940,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 - Atualizar status de pedidos
 - Criar e gerenciar cupons
 - Gerar relatórios
-- Ver dados de todos os clientes
+- Ver dados de todos os clientes (Não Implementado)
 
 ❌ **Negado:**
 - Excluir pedidos finalizados (apenas cancelar)

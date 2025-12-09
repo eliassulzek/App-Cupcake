@@ -198,11 +198,10 @@ Foram realizados **testes manuais abrangentes**, incluindo:
 
 **5 bugs identificados durante os testes:**
 
-1. ✅ **Bug #01**: Validação de CPF inconsistente → **Corrigido**
-2. ✅ **Bug #02**: Total do carrinho não atualiza automaticamente → **Corrigido**
-3. ✅ **Bug #03**: Cupom expirado sendo aceito → **Corrigido**
-4. ✅ **Bug #04**: Estoque negativo em compras simultâneas → **Corrigido**
-5. ✅ **Bug #05**: Filtro de preço retornando resultados incorretos → **Corrigido**
+1. ✅ **Bug #01**: Total do carrinho não atualiza automaticamente → **Corrigido**
+2. ✅ **Bug #02**: Cupom expirado sendo aceito → **Corrigido**
+3. ✅ **Bug #03**: Estoque negativo em compras simultâneas → **Corrigido**
+4. ✅ **Bug #04**: Filtro de preço retornando resultados incorretos → **Corrigido**
 
 **Taxa de Correção**: 100% (todos os bugs foram corrigidos)
 
@@ -287,13 +286,13 @@ Contém:
 
 ---
 
-## 🔗 5. LINK DA APLICAÇÃO PUBLICADA
+## 🔗 5. https://cupcake-delight-ebdbb888.base44.app
 
 ### 5.1 Sistema em Produção
 
 O **App Cupcakes** está publicado e acessível online através da plataforma Base44:
 
-> 🌐 **Link da Aplicação**: `[INSERIR LINK DO SISTEMA PUBLICADO AQUI]`
+> 🌐 **Link da Aplicação**: `https://cupcake-delight-ebdbb888.base44.app`
 
 ### 5.2 Ambientes
 
@@ -302,13 +301,17 @@ O **App Cupcakes** está publicado e acessível online através da plataforma Ba
 
 ### 5.3 Credenciais de Teste (se aplicável)
 
-**Área do Cliente**:
-- Email: `[INSERIR EMAIL DE TESTE]`
-- Senha: `[INSERIR SENHA DE TESTE]`
+### Credenciais para Teste (Cliente)
+O avaliador pode criar a própria conta direto no app.
 
-**Área Administrativa**:
-- Email: `[INSERIR EMAIL ADMIN]`
-- Senha: `[INSERIR SENHA ADMIN]`
+### Credenciais de Administrador
+A autenticação administrativa é gerenciada pela plataforma Base44.
+Somente a conta Owner possui permissões de administrador.
+Para fins de avaliação, o acesso admin será demonstrado no vídeo
+e todas as funcionalidades admin estão documentadas no repositório.
+
+Acesso ao painel admin: disponível somente pelo Owner.
+
 
 ---
 
@@ -484,7 +487,7 @@ Este projeto demonstra:
 ### Informações do Desenvolvedor
 
 **Projeto Acadêmico**: Projeto Integrador de Tecnologia (PIT)  
-**Instituição**: [Nome da Instituição]  
+**Instituição**: Universidade Positivo  
 **Período**: 2025
 
 ### Dúvidas sobre o Projeto

@@ -287,11 +287,10 @@ Agora filtro retorna apenas produtos dentro da faixa especificada.
 
 | Bug # | Descrição Curta | Severidade | Status |
 |-------|----------------|------------|--------|
-| #01 | Validação inconsistente de CPF | 🟡 Média | ✅ Corrigido |
-| #02 | Total do carrinho não atualiza | 🔴 Alta | ✅ Corrigido |
-| #03 | Cupom expirado aceito | 🔴 Alta | ✅ Corrigido |
-| #04 | Estoque negativo | 🔴 Alta | ✅ Corrigido |
-| #05 | Filtro de preço incorreto | 🟡 Média | ✅ Corrigido |
+| #01 | Total do carrinho não atualiza | 🔴 Alta | ✅ Corrigido |
+| #02 | Cupom expirado aceito | 🔴 Alta | ✅ Corrigido |
+| #03 | Estoque negativo | 🔴 Alta | ✅ Corrigido |
+| #04 | Filtro de preço incorreto | 🟡 Média | ✅ Corrigido |
 
 **Todos os bugs identificados foram corrigidos antes da publicação do sistema.**
 

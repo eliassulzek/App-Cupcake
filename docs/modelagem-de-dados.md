@@ -137,7 +137,7 @@ Registra os pedidos realizados pelos clientes.
 
 **Constraints de Validação:**
 ```sql
-CHECK (status IN ('Pendente', 'Preparando', 'Em Entrega', 'Entregue', 'Cancelado'))
+CHECK (status IN ('Aguardando Pagamento', 'Em Preparo', 'Em Rota', 'Entregue', 'Cancelado'))
 CHECK (valor_total = valor_subtotal - valor_desconto)
 ```
 
@@ -436,7 +436,7 @@ LIMIT 10;
 1. **Integridade Referencial**: Todas as chaves estrangeiras garantem consistência
 2. **Constraints de Domínio**: Verificações de valores válidos (ex: status, notas)
 3. **Checks de Valores**: Garantia de valores positivos para preços e quantidades
-4. **Unicidade**: Emails, CPFs e códigos de cupom únicos
+4. **Unicidade**: Emails, e códigos de cupom únicos
 
 ### Triggers Recomendados (Base44)
 

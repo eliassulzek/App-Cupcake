@@ -10,7 +10,7 @@ O **App Cupcakes** é uma plataforma completa de e-commerce especializada na ven
 
 ### 🔗 Sistema Publicado
 
-> **Link da Aplicação:** `[INSERIR LINK DO SISTEMA PUBLICADO AQUI]`
+> **Link da Aplicação:** `https://cupcake-delight-ebdbb888.base44.app`
 
 ---
 
@@ -24,7 +24,7 @@ O **App Cupcakes** é uma plataforma completa de e-commerce especializada na ven
 - **Checkout Simplificado**: Processo de compra rápido e intuitivo
 - **Pagamento Simulado**: Sistema de pagamento para demonstração (Pix, Cartão, Boleto)
 - **Histórico de Pedidos**: Acompanhamento completo de todas as compras
-- **Status em Tempo Real**: Rastreamento do pedido (Pendente → Preparando → Em Entrega → Entregue)
+- **Status em Tempo Real**: Rastreamento do pedido (Aguardando Pagamento → Em Preparo → Em Rota → Entregue)
 - **Sistema de Avaliações**: Avaliação de produtos e experiência de compra
 - **Perfil do Usuário**: Gerenciamento de dados pessoais e endereços
 
@@ -36,7 +36,7 @@ O **App Cupcakes** é uma plataforma completa de e-commerce especializada na ven
 - **Gestão de Estoque**: Controle de quantidade disponível e alertas de estoque baixo
 - **Gerenciamento de Pedidos**: Visualização e atualização de status dos pedidos
 - **Sistema de Cupons**: Criação e gestão de cupons de desconto
-- **Relatórios**: Exportação de dados de vendas e pedidos
+- **Relatórios**: Exportação de dados de vendas e pedidos nos formatos CSV e JSON
 
 ---
 
@@ -154,4 +154,4 @@ Este projeto foi desenvolvido como parte de um trabalho acadêmico.
 
 ---
 
-**Desenvolvido com 💜 usando Base44 No-Code Platform**
+**Desenvolvido por Elias Gonçalves Sulzek usando Base44 No-Code Platform**
