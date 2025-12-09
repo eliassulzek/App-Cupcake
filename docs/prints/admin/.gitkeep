@@ -1,0 +1,36 @@
+# Pasta para Screenshots da Área Administrativa
+
+Esta pasta deve conter capturas de tela das principais funcionalidades do painel administrativo:
+
+## Screenshots Recomendadas:
+
+1. **dashboard.png** - Dashboard principal com métricas
+![dashboard](image.png)
+2. **dashboard-graficos.png** - Gráficos de vendas e análises
+![dashboard-graficos](image-1.png)
+3. **produtos-lista.png** - Lista completa de produtos
+![produtos-lista](image-2.png)
+4. **produto-criar.png** - Formulário de criação de produto
+![produto-criar](image-3.png)
+5. **produto-editar.png** - Formulário de edição de produto
+![produto-editar](image-4.png)
+6. **estoque-alertas.png** - Produtos com estoque baixo
+![estoque-alertas](image-5.png)
+7. **pedidos-lista.png** - Lista de todos os pedidos
+![pedidos-lista](image-6.png)
+8. **pedido-detalhes.png** - Detalhes completos de um pedido
+![pedido-detalhes](image-7.png)
+9. **pedido-status.png** - Atualização de status do pedido
+![pedido-status](image-8.png)
+10. **cupons-lista.png** - Lista de cupons cadastrados
+![cupons-lista](image-9.png)
+11. **cupom-criar.png** - Formulário de criação de cupom
+![cupom-criar](image-10.png)
+12. **relatorios-vendas.png** - Relatório de vendas
+![relatorios-vendas](image-11.png)
+13. **relatorios-produtos.png** - Relatório de produtos mais vendidos
+![relatorios-produtos](image-12.png)
+14. **mobile-dashboard.png** - Versão mobile do dashboard admin
+![mobile-dashboard](Image-13.jpg), ![mobile-dashboard1](Image-14.jpg), ![mobile-dashboard2](Image-15.jpg)
+15. **menu-admin.png** - Menu das seções de administrador
+![menu-admin](Image-16.jpg)

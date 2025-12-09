@@ -1,0 +1,42 @@
+# Pasta para Screenshots da Área do Cliente
+
+Esta pasta deve conter capturas de tela das principais funcionalidades da área do cliente:
+
+## Screenshots Recomendadas:
+
+1. **catalogo.png** - Página inicial com catálogo de produtos
+![catalogo](image.png)
+2. **produto-detalhes.png** - Tela de detalhes de um produto
+![produto-detalhes](image-1.png)
+3. **busca-filtros.png** - Sistema de busca e filtros em uso
+![busca-filtros](image-2.png)
+4. **carrinho.png** - Carrinho de compras com produtos
+![carrinho](image-3.png)
+![carrinho1](image-4.png)
+5. **checkout-dados.png** - Etapa de preenchimento de dados pessoais
+![checkout-dados](image-5.png)
+6. **checkout-endereco.png** - Etapa de endereço de entrega
+![checkout-endereco](image-6.png)
+7. **checkout-cupom.png** - Aplicação de cupom de desconto
+![checkout-cupom](image-8.png)
+8. **checkout-pagamento.png** - Seleção de método de pagamento
+![checkout-pagamento](image-9.png)
+9. **pedido-confirmacao.png** - Tela de confirmação do pedido
+![pedido-confirmacao](image-10.png)
+10. **historico-pedidos.png** - Lista de pedidos do cliente
+![historico-pedidos](image-11.png)
+11. **rastreamento.png** - Tela de rastreamento com timeline
+![rastreamento](image-12.png)
+12. **avaliacoes.png** - Sistema de avaliações
+![avaliacoes](image-13.png)
+![avaliacoes1](image-14.png)
+13. **perfil.png** - Página de perfil do usuário
+![perfil](image-15.png)
+14. **mobile-catalogo.png** - Versão mobile do catálogo
+![mobile-catalogo](mobile-catalogo.jpg)
+![mobile-catalogo1](mobile-catalogo1.jpg)
+15. **mobile-carrinho.png** - Versão mobile do carrinho
+![mobile-carrinho](mobile-carrinho.jpg)
+![mobile-carrinho1](mobile-carrinho1.jpg)
+![mobile-carrinho2](mobile-carrinho2.jpg)
+![mobile-carrinho3](mobile-carrinho3.jpg)
