@@ -4,13 +4,15 @@
 [![Status](https://img.shields.io/badge/Status-Em%20Produção-success)]()
 [![Documentation](https://img.shields.io/badge/Docs-Completa-brightgreen)](./docs)
 
+![Home] (./docs/prints/home.png)
+
 ## 📱 Sobre o Projeto
 
 O **App Cupcakes** é uma plataforma completa de e-commerce especializada na venda de cupcakes artesanais, desenvolvida inteiramente na plataforma No-Code **Base44**. O sistema oferece uma experiência moderna e intuitiva tanto para clientes quanto para administradores.
 
 ### 🔗 Sistema Publicado
 
-> **Link da Aplicação:** `https://cupcake-delight-ebdbb888.base44.app`
+> **Link da Aplicação (Produção):** `https://cupcake-delight-ebdbb888.base44.app`
 
 ---
 
@@ -42,7 +44,7 @@ O **App Cupcakes** é uma plataforma completa de e-commerce especializada na ven
 
 ## 🏗️ Arquitetura
 
-O App Cupcakes foi construído utilizando a arquitetura **serverless** e **no-code** da plataforma Base44:
+O App Cupcakes utiliza a arquitetura serverless e a infraestrutura No-Code da Base44, permitindo desenvolvimento rápido, escalabilidade automática e deploy sem necessidade de configuração de servidores.
 
 - **Frontend**: Interface responsiva gerada automaticamente pela Base44
 - **Backend**: API REST serverless com lógica de negócios configurada visualmente
@@ -127,9 +129,17 @@ Os arquivos relacionados ao Projeto Integrador estão na pasta [`/pit`](./pit):
 
 O sistema está publicado e acessível através da plataforma Base44. Utilize o link fornecido acima para acessar a aplicação em produção.
 
-**Credenciais de Teste** (se aplicável):
-- Área do Cliente: [A ser fornecido]
-- Área Administrativa: [A ser fornecido]
+### Credenciais para Teste (Cliente)
+O avaliador pode também criar sua própria conta via interface de cadastro.
+
+A plataforma Base44 utiliza verificação por e-mail (código de autenticação).
+Por esse motivo, contas de demonstração não são fornecidas, já que não seria possível
+receber o código de verificação em e-mails fictícios.
+
+### Credenciais de Administrador
+A autenticação administrativa é gerenciada pela Base44.
+Apenas o Owner possui permissões de administrador.
+As funcionalidades do painel admin serão demonstradas no vídeo do PIT.
 
 ---
 
@@ -144,13 +154,22 @@ O sistema está publicado e acessível através da plataforma Base44. Utilize o 
 
 ## 📞 Contato
 
-Para dúvidas sobre o projeto ou acesso ao sistema, entre em contato através dos canais da instituição de ensino.
+Desenvolvedor: Elias Gonçalves Sulzek  
+
+RGM: 30152267
+
+E-mail para contato acadêmico: elias.sulzek@cs.up.edu.br
+
+Linkedin: https://www.linkedin.com/in/elias-sulzek-26b259233/
+
+GitHub: https://github.com/eliassulzek
 
 ---
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido como parte de um trabalho acadêmico.
+Este repositório é destinado exclusivamente para fins acadêmicos.
+Não possui fins comerciais e não inclui código-fonte exportável.
 
 ---
 

@@ -83,7 +83,7 @@ Toda a documentação técnica está organizada no repositório GitHub:
 2. **Arquitetura Serverless**
    - Escalabilidade automática
    - Alta disponibilidade (99.5%+ uptime)
-   - Custo otimizado (pay-per-use)
+   - Custo otimizado (modelo pay-per-use)
 
 3. **Manutenção Simplificada**
    - Infraestrutura gerenciada pela Base44
@@ -302,15 +302,16 @@ O **App Cupcakes** está publicado e acessível online através da plataforma Ba
 ### 5.3 Credenciais de Teste (se aplicável)
 
 ### Credenciais para Teste (Cliente)
-O avaliador pode criar a própria conta direto no app.
+O avaliador pode também criar sua própria conta via interface de cadastro.
+
+A plataforma Base44 utiliza verificação por e-mail (código de autenticação).
+Por esse motivo, contas de demonstração não são fornecidas, já que não seria possível
+receber o código de verificação em e-mails fictícios.
 
 ### Credenciais de Administrador
-A autenticação administrativa é gerenciada pela plataforma Base44.
-Somente a conta Owner possui permissões de administrador.
-Para fins de avaliação, o acesso admin será demonstrado no vídeo
-e todas as funcionalidades admin estão documentadas no repositório.
-
-Acesso ao painel admin: disponível somente pelo Owner.
+A autenticação administrativa é gerenciada pela Base44.
+Apenas o Owner possui permissões de administrador.
+As funcionalidades do painel admin serão demonstradas no vídeo do PIT.
 
 
 ---
@@ -414,7 +415,7 @@ app-cupcakes/
    - Cloud Computing
    - APIs REST
 
-#### Desafios Enfrentrados
+#### Desafios Enfrentados
 
 1. **Limitações da Plataforma**
    - Customizações limitadas às capacidades da Base44
@@ -484,11 +485,18 @@ Este projeto demonstra:
 
 ## 📞 8. CONTATO E SUPORTE
 
+Desenvolvedor: Elias Gonçalves Sulzek  
+RGM: 30152267
+E-mail para contato acadêmico: elias.sulzek@cs.up.edu.br
+Linkedin: https://www.linkedin.com/in/elias-sulzek-26b259233/
+GitHub: https://github.com/eliassulzek
+
+
 ### Informações do Desenvolvedor
 
 **Projeto Acadêmico**: Projeto Integrador de Tecnologia (PIT)  
 **Instituição**: Universidade Positivo  
-**Período**: 2025
+**Período**: Dezembro/2025
 
 ### Dúvidas sobre o Projeto
 
