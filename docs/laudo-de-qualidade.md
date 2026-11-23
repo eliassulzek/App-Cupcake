@@ -18,14 +18,14 @@ Registrar o estado do **App Cupcakes** (desenvolvido na plataforma no-code Base4
 | Módulo | Situação | Observações |
 |--------|----------|-------------|
 | Catálogo de produtos | ✅ Implementado | Grid responsivo com imagem, nome e preço |
-| Busca e filtros | ✅ Implementado | Busca textual, categorias, faixa de preço e ordenação |
+| Busca e filtros | ✅ Implementado | Busca textual, filtro por sabor e faixa de preço; sem ordenação nem paginação |
 | Carrinho | ✅ Implementado | Adicionar, alterar quantidade e remover |
-| Checkout | 🟡 Parcial | Pagamento **simulado**, apenas Pix; cartão e boleto não implementados |
-| Cupons | ✅ Implementado | Validação de validade, limite de uso e valor mínimo |
+| Checkout | 🟡 Parcial | Pagamento **simulado** (Pix, Cartão e Boleto exibidos, sem cobrança real) |
+| Cupons | ✅ Implementado | Código, tipo, valor, data de validade e limite de uso; sem data de início nem valor mínimo |
 | Histórico de pedidos | 🟡 Parcial | Listagem e detalhes; filtros por status/data não implementados |
 | Rastreamento | 🟡 Parcial | Timeline de status; sem previsão de entrega, código de rastreio ou notificações |
-| Avaliações | ✅ Implementado | Nota e comentário por produto |
-| Perfil | 🟡 Parcial | Dados pessoais e senha; gestão de múltiplos endereços e histórico de atividades não implementados |
+| Avaliações | ✅ Implementado | Exibição de avaliações na página do produto (nota média, comentário e data) |
+| Perfil | 🟡 Parcial | Telefone, CEP, endereço, cidade e estado; sem múltiplos endereços, CPF ou histórico de atividades |
 | Autenticação | ✅ Implementado | Cadastro, login e logout |
 
 ### Área Administrativa

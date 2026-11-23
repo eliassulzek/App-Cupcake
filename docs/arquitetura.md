@@ -43,9 +43,9 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               BANCO DE DADOS (PostgreSQL)                        │
-│  • Tabelas Relacionais                                           │
-│  • Constraints e Índices                                         │
+│               BANCO DE DADOS (gerenciado pela Base44)            │
+│  • Entidades (Produto, Pedido, Pagamento, Avaliacao, Cupom, User)│
+│  • Esquemas com campos, tipos e enums                            │
 │  • Backup gerenciado                                             │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -66,14 +66,13 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 
 - **Catálogo de Produtos**
   - Grid responsivo de cupcakes
-  - Cards com imagem, nome, preço e descrição
-  - Sistema de paginação
+  - Cards com imagem, sabor, nome, descrição, preço e nota média
+  - Sugestão do Dia em destaque
 
 - **Barra de Busca e Filtros**
-  - Busca textual por nome/descrição
-  - Filtros por categoria (sabores)
-  - Filtros por faixa de preço
-  - Ordenação (menor/maior preço, nome)
+  - Busca textual
+  - Filtro por sabor
+  - Filtro por faixa de preço (R$ 0 a R$ 50)
 
 - **Carrinho de Compras**
   - Visualização de itens adicionados
@@ -82,8 +81,7 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
   - Cálculo automático de subtotal e total
 
 - **Checkout**
-  - Formulário de dados pessoais
-  - Seleção de endereço de entrega
+  - Dados de entrega (preenchidos a partir do perfil)
   - Escolha de método de pagamento (simulado)
   - Aplicação de cupom de desconto
   - Resumo do pedido
@@ -94,26 +92,24 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
   - Detalhes de cada pedido
 
 - **Perfil do Usuário**
-  - Edição de dados cadastrais
-  - Gerenciamento de endereços
-  - Alteração de senha
+  - Edição de telefone, CEP, endereço, cidade e estado
 
 #### 2. Área Administrativa
 
 - **Dashboard**
   - Cards com métricas principais
-  - Gráficos de vendas
+  - Gráficos de produtos mais vendidos e pedidos por status
   - Tabela de últimos pedidos
   - Alertas de estoque baixo
 
 - **Gestão de Produtos**
   - Listagem completa com busca
   - Formulários de cadastro/edição
-  - Upload de imagens
+  - Imagem informada por URL
   - Status ativo/inativo
 
 - **Gerenciamento de Pedidos**
-  - Filtros por status e data
+  - Filtros por status
   - Atualização de status
   - Visualização detalhada
 
@@ -145,7 +141,7 @@ A plataforma disponibiliza operações RESTful para cada entidade. O quadro abai
 
 ```
 /api/produtos
-  ├─ GET     /          # Listar produtos (com paginação e filtros)
+  ├─ GET     /          # Listar produtos (com filtros)
   ├─ GET     /{id}      # Obter produto específico
   ├─ POST    /          # Criar novo produto
   ├─ PUT     /{id}      # Atualizar produto
@@ -177,7 +173,7 @@ Implementada visualmente na Base44:
 
 1. **Validações de Entrada**
    - Campos obrigatórios
-   - Formatos de dados (email, telefone, CPF)
+   - Formatos de dados (e-mail, telefone, CEP)
    - Valores mínimos/máximos
 
 2. **Regras de Negócio**
@@ -214,46 +210,34 @@ Implementada visualmente na Base44:
 
 ## 💾 Camada de Dados
 
-### Banco de Dados Relacional (PostgreSQL)
+### Banco de Dados Gerenciado
 
-- **Tipo**: PostgreSQL gerenciado pela Base44
+- **Tipo**: banco gerenciado pela Base44, organizado em entidades com esquema (a tecnologia interna não é exposta pela plataforma)
 - **Localização**: cloud (infraestrutura da Base44)
 - **Backup e replicação**: responsabilidade da plataforma, sem configuração própria neste projeto
 
-### Estrutura de Tabelas
+### Estrutura de Entidades
 
 #### Principais Entidades
 
-| Tabela | Descrição | Volume estimado (hipotético) |
-|--------|-----------|------------------------------|
-| `cliente` | Dados dos usuários clientes | Milhares |
-| `produto` | Catálogo de cupcakes | Dezenas |
-| `pedido` | Pedidos realizados | Milhares |
-| `pedido_item` | Itens de cada pedido | Dezenas de milhares |
-| `pagamento` | Registros de pagamento (simulado) | Milhares |
-| `avaliacao` | Avaliações dos clientes | Milhares |
-| `cupom` | Cupons de desconto | Centenas |
+| Entidade | Descrição |
+|----------|-----------|
+| `User` | Usuários da plataforma (clientes e administradores), com telefone e endereço |
+| `Produto` | Catálogo de cupcakes |
+| `Pedido` | Pedidos, com itens embutidos e histórico de status |
+| `Pagamento` | Registros de pagamento (simulado) |
+| `Avaliacao` | Avaliações dos produtos |
+| `Cupom` | Cupons de desconto |
 
 > Para detalhes completos do modelo de dados, consulte: [modelagem-de-dados.md](./modelagem-de-dados.md)
 
 ### Relacionamentos Principais
 
 ```
-cliente (1) ──────── (N) pedido
-                            │
-                            │ (1)
-                            │
-                            ├─────── (N) pedido_item
-                            │               │
-                            │               │ (N)
-                            │               │
-                            │               └─────── (1) produto
-                            │
-                            ├─────── (1) pagamento
-                            │
-                            └─────── (1) cupom (opcional)
-
-produto (1) ──────── (N) avaliacao ──────── (1) cliente
+User ──(e-mail)──► Pedido ──(pedido_id)──► Pagamento
+                     │  itens[] embutidos
+                     └──(cupom_usado)──► Cupom
+Produto ◄──(produto_id)── Avaliacao
 ```
 
 ---
@@ -370,7 +354,7 @@ Logs e métricas estão disponíveis conforme o painel da plataforma. Não foi c
    - Preço
    - Categoria/Sabor
    - Quantidade em estoque
-   - Upload de imagem
+   - URL da imagem
 4. Salva produto
 5. Sistema valida dados
 6. Produto criado e disponível no catálogo
@@ -383,7 +367,6 @@ Logs e métricas estão disponíveis conforme o painel da plataforma. Não foi c
 ### Internas (Base44)
 
 - **Autenticação**: sistema nativo
-- **Upload de Arquivos**: armazenamento da Base44
 - **E-mails**: verificação de conta pela plataforma
 
 ### Externas (não implementadas)
@@ -411,7 +394,7 @@ Em um modelo serverless gerenciado, a escalabilidade e a disponibilidade depende
 |--------|-----------|----------|
 | **Frontend** | Interface gerada pela Base44 | No-code |
 | **Backend** | Base44 Serverless | Gerenciado |
-| **Banco de Dados** | PostgreSQL | Gerenciado |
+| **Banco de Dados** | Entidades Base44 | Gerenciado |
 | **Autenticação** | Base44 Auth | Integrada |
 | **Hospedagem** | Base44 Cloud | Gerenciada |
 | **Protocolo** | HTTPS | - |
