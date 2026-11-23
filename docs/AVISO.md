@@ -6,77 +6,42 @@ Este repositório **NÃO contém código-fonte** do projeto App Cupcakes.
 
 ### Por quê?
 
-O **App Cupcakes** foi inteiramente desenvolvido na plataforma **Base44**, uma ferramenta de desenvolvimento **No-Code** (sem código). A Base44 permite criar aplicações completas e funcionais através de interface visual, sem necessidade de escrever código tradicional.
+O **App Cupcakes** foi desenvolvido na plataforma **Base44**, uma plataforma no-code: o app é construído e publicado pela interface da plataforma, sem escrever código tradicional. No plano utilizado neste projeto, não havia acesso aos arquivos do código nem exportação dele, por isso este repositório contém apenas a documentação.
+
+> **Nota:** as capacidades e limitações da Base44 mudam com o tempo e variam conforme o plano contratado. Para informações atuais, consulte a documentação oficial da plataforma.
 
 ---
 
-## 🛠️ O que é a Base44?
+## 🛠️ O que a Base44 fornece
 
-A **Base44** é uma plataforma No-Code que, na época do desenvolvimento deste projeto, oferecia:
+Neste projeto, a plataforma forneceu de forma gerenciada:
 
-- **Interface Visual de Desenvolvimento**: Criação de aplicações através de arrastar e soltar
-- **Backend Serverless Automático**: API REST gerada automaticamente
-- **Banco de Dados Gerenciado**: PostgreSQL configurável visualmente
-- **Sistema de Autenticação Integrado**: Login e controle de acesso nativos
-- **Deploy Automático**: Publicação instantânea em infraestrutura cloud
-- **Lógica de Negócios Visual**: Fluxos e regras definidos sem código
+- **Interface e hospedagem**: o app é construído e publicado pela própria plataforma
+- **Backend gerenciado**: sem servidores próprios
+- **Dados gerenciados**: entidades com esquema (`Produto`, `Pedido`, `Pagamento`, `Avaliacao`, `Cupom` e `User`)
+- **Autenticação integrada**: login e controle de acesso nativos
 
-> **Nota:** as capacidades e limitações descritas nesta seção refletem o que foi observado durante o desenvolvimento do projeto (2025) e podem ter mudado desde então. Para informações atuais, consulte a documentação oficial da Base44.
+### Limitações encontradas no plano utilizado
 
-### Limitações da Plataforma
-
-🚫 **A Base44 NÃO permitia:**
-- Exportação de código-fonte
-- Acesso direto aos arquivos do projeto
-- Versionamento tradicional com Git
-- Download do código backend ou frontend
-
-✅ **O que era possível:**
-- Desenvolvimento completo de aplicações funcionais
-- Publicação e hospedagem automática
-- Integração com APIs externas
-- Customização visual e lógica de negócios
-- Documentação completa do projeto (como neste repositório)
+🚫 Sem exportação nem acesso direto ao código-fonte
+🚫 Sem versionamento do código neste repositório (o repositório guarda só a documentação)
+🚫 Pagamento real e entrega não implementados (o pagamento é simulado)
 
 ---
 
 ## 📦 O que Este Repositório Contém
 
-Este repositório foi criado para documentar o projeto App Cupcakes, mesmo sem acesso ao código-fonte. Você encontrará:
+Este repositório documenta o projeto App Cupcakes sem acesso ao código-fonte:
 
-### ✅ Documentação
-
-1. **Arquitetura do Sistema** (`arquitetura.md`)
-   - Descrição técnica da estrutura
-   - Fluxos de dados
-   - Camadas da aplicação
-
-2. **Modelagem de Dados** (`modelagem-de-dados.md`)
-   - Tabelas do banco de dados
-   - Relacionamentos entre entidades
-   - Tipos de dados e constraints
-
-3. **Funcionalidades** (`funcionalidades.md`)
-   - Features implementadas
-   - Área do cliente e administrativa
-   - Fluxos de uso
-
-4. **Testes e Qualidade** (`testes.md` e `laudo-de-qualidade.md`)
-   - Casos de teste executados
-   - Bugs encontrados e corrigidos
-   - Avaliação de qualidade
-
-### 📸 Capturas de Tela
-
-A pasta `/docs/prints` contém screenshots das principais telas:
-- `/docs/prints/cliente/`: Interface do usuário final
-- `/docs/prints/admin/`: Painel administrativo
+1. **Arquitetura do Sistema** (`arquitetura.md`): estrutura geral e camadas gerenciadas pela plataforma
+2. **Modelagem de Dados** (`modelagem-de-dados.md`): entidades reais do app, relacionamentos e limitações do modelo
+3. **Funcionalidades** (`funcionalidades.md`): o que o app faz e o que não faz
+4. **Testes e Qualidade** (`testes.md` e `laudo-de-qualidade.md`): casos de teste manuais, bugs corrigidos e autoavaliação
+5. **Capturas de Tela** (`/docs/prints`): telas do cliente (`cliente/`) e do painel administrativo (`admin/`)
 
 ---
 
 ## 🔗 Aplicação Publicada
-
-O sistema está acessível online através da plataforma Base44:
 
 > **Link da Aplicação:** `https://cupcake-delight-ebdbb888.base44.app`
 
@@ -86,47 +51,35 @@ A aplicação é hospedada pela Base44, e sua disponibilidade depende da platafo
 
 ## 🤔 Por que Usar No-Code?
 
-O desenvolvimento No-Code oferece várias vantagens:
-
 ### Vantagens
 
-- ⚡ **Velocidade**: Desenvolvimento muito mais rápido que código tradicional
-- 🎯 **Foco no Negócio**: Menos tempo com infraestrutura, mais tempo nas funcionalidades
-- 🔒 **Infraestrutura gerenciada**: A manutenção e a segurança da infraestrutura ficam a cargo da plataforma
-- 📱 **Responsividade**: Interface adaptável a diferentes dispositivos
-- 🚀 **Deploy Rápido**: Publicação com poucos cliques
-- 💰 **Custo Reduzido**: Menor necessidade de equipe técnica especializada
+- ⚡ **Velocidade**: desenvolvimento mais rápido que o código tradicional
+- 🎯 **Foco no negócio**: menos tempo com infraestrutura, mais tempo em requisitos e funcionalidades
+- 🔒 **Infraestrutura gerenciada**: manutenção e segurança da infraestrutura ficam a cargo da plataforma
+- 🚀 **Deploy rápido**: publicação pela própria plataforma
 
 ### Considerações
 
-- 🔒 **Vendor Lock-in**: Dependência da plataforma Base44
-- 📦 **Código Proprietário**: Sem acesso ao código-fonte
-- 🎨 **Customização Limitada**: Restrito às capacidades da plataforma
-- 🔌 **Integrações**: Dependente das integrações disponíveis na Base44
+- 🔒 **Vendor lock-in**: dependência da plataforma Base44
+- 📦 **Acesso ao código**: limitado conforme o plano contratado
+- 🎨 **Customização**: restrita às capacidades da plataforma
+- 🔌 **Integrações**: dependentes do que a plataforma oferece
 
 ---
 
 ## 📖 Como Entender o Projeto
 
-Mesmo sem o código-fonte, você pode entender o projeto através de:
-
-1. **Leia a Documentação** na pasta `/docs`
-2. **Analise o Modelo de Dados** para entender a estrutura
-3. **Explore as Funcionalidades** documentadas
-4. **Acesse o Sistema Publicado** para ver em funcionamento
-5. **Revise os Testes e o Laudo** para entender a qualidade
+1. Leia a documentação na pasta `/docs`
+2. Analise o modelo de dados
+3. Explore as funcionalidades documentadas
+4. Acesse o sistema publicado
+5. Revise os testes e o laudo de qualidade
 
 ---
 
 ## 🎓 Contexto Acadêmico
 
-Este projeto foi desenvolvido como projeto final do curso de Engenharia de Software. A escolha de uma plataforma No-Code foi intencional para:
-
-- Demonstrar conhecimento de tecnologias modernas
-- Focar na análise de requisitos e modelagem
-- Entregar um produto funcional completo
-- Aplicar conceitos de engenharia de software
-- Documentar profissionalmente um projeto
+Este projeto foi desenvolvido como projeto final do curso de Engenharia de Software. A escolha de uma plataforma no-code teve como objetivo focar na análise de requisitos, na modelagem de dados e na documentação, entregando um produto funcional.
 
 ---
 
@@ -134,40 +87,39 @@ Este projeto foi desenvolvido como projeto final do curso de Engenharia de Softw
 
 ### 1. Por que não há código neste repositório?
 
-A plataforma Base44 não permitia a exportação de código. O desenvolvimento foi realizado de forma visual, pela interface da plataforma.
+No plano utilizado, a Base44 não oferecia exportação do código. O desenvolvimento foi feito pela interface da plataforma.
 
 ### 2. Como posso ver o sistema funcionando?
 
-Acesse o link da aplicação publicada (fornecido acima). O sistema está publicado e funcional. O pagamento é simulado, para fins de demonstração.
+Acesse o link da aplicação publicada. O pagamento é simulado, para fins de demonstração.
 
 ### 3. Posso replicar este projeto?
 
-Você pode usar a documentação como base, mas precisaria reconstruir o sistema do zero em outra tecnologia (ou na própria Base44).
+Você pode usar a documentação como base para reconstruir o sistema em outra tecnologia ou na própria Base44.
 
 ### 4. O sistema é real ou apenas um protótipo?
 
-É uma aplicação funcional, publicada na Base44, com banco de dados, autenticação e as funcionalidades descritas na documentação. O pagamento é simulado, e não há integração com gateways de pagamento reais nem com serviços de entrega.
+É uma aplicação funcional e publicada, com dados, autenticação e as funcionalidades descritas na documentação. O pagamento é simulado e não há integração com gateways de pagamento nem com serviços de entrega.
 
 ### 5. Como foi feito o versionamento?
 
-O código não é versionado em Git. Este repositório serve apenas para documentação.
+Este repositório versiona apenas a documentação. O app em si fica na Base44.
 
 ---
 
 ## 📚 Recursos Adicionais
 
 - **Site da Base44**: [https://base44.com](https://base44.com)
-- **Documentação do Projeto**: consulte os demais arquivos na pasta `/docs`
+- **Documentação do Projeto**: demais arquivos na pasta `/docs`
 
 ---
 
 ## 📞 Dúvidas?
 
-Se você tem dúvidas sobre:
-- **A Documentação**: revise os arquivos na pasta `/docs`
-- **O Sistema**: acesse a aplicação publicada e teste as funcionalidades
-- **A Plataforma Base44**: consulte a documentação oficial da Base44
-- **O Projeto**: veja os contatos no [README](../README.md)
+- **A documentação**: revise os arquivos em `/docs`
+- **O sistema**: acesse a aplicação publicada
+- **A plataforma**: consulte a documentação oficial da Base44
+- **O projeto**: veja os contatos no [README](../README.md)
 
 ---
 
