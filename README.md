@@ -40,6 +40,36 @@ Projeto final do curso de Engenharia de Software, com foco em **modelagem de dad
 - **Sistema de Cupons:** criação e gestão de cupons de desconto
 - **Relatórios:** exportação de dados de vendas e pedidos nos formatos CSV e JSON
 
+## 📸 Capturas de Tela
+
+### Área do Cliente
+
+| Catálogo | Carrinho |
+| --- | --- |
+| ![Catálogo](./docs/prints/cliente/catalogo.png) | ![Carrinho](./docs/prints/cliente/carrinho.png) |
+
+| Checkout | Meus Pedidos |
+| --- | --- |
+| ![Checkout](./docs/prints/cliente/checkout.png) | ![Meus Pedidos](./docs/prints/cliente/meus-pedidos.png) |
+
+| Rastreamento do Pedido |
+| --- |
+| ![Rastreamento do pedido](./docs/prints/cliente/pedido-rastreamento.png) |
+
+### Painel Administrativo
+
+| Dashboard | Pedidos |
+| --- | --- |
+| ![Dashboard](./docs/prints/admin/dashboard.png) | ![Pedidos](./docs/prints/admin/pedidos.png) |
+
+| Produtos | Cupons |
+| --- | --- |
+| ![Produtos](./docs/prints/admin/produtos.png) | ![Cupons](./docs/prints/admin/cupons.png) |
+
+| Relatórios |
+| --- |
+| ![Relatórios](./docs/prints/admin/relatorios.png) |
+
 ## 🏗️ Arquitetura
 
 O App Cupcakes utiliza arquitetura serverless e a infraestrutura no-code da Base44, permitindo desenvolvimento rápido, escalabilidade automática e deploy sem configuração de servidores.
