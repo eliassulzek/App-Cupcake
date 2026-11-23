@@ -256,7 +256,7 @@ Este documento descreve as funcionalidades do **App Cupcakes**, desenvolvido na 
   - Botão "Ver Detalhes"
 
 - **Filtros:**
-  - Por status (Todos, Pendente, Em Andamento, Entregue, Cancelado)
+  - Por status (Todos, Aguardando Pagamento, Em Preparo, Em Rota, Entregue, Cancelado)
   - Por data (Última semana, Último mês, Último ano)
 
 - **Detalhes do Pedido:**
@@ -442,7 +442,7 @@ Este documento descreve as funcionalidades do **App Cupcakes**, desenvolvido na 
 
 2. **Total de Pedidos (Hoje)**
    - Quantidade de pedidos
-   - Quantidade de pedidos Pendentes
+   - Quantidade de pedidos Aguardando Pagamento
 
 3. **Produtos**
    - Quantidade total de produtos
@@ -670,7 +670,7 @@ Este documento descreve as funcionalidades do **App Cupcakes**, desenvolvido na 
   - Ações
 
 **Filtros:**
-- Por status (Todos, Aguardando, Preparo, Em Rota, Entregue, Cancelado)
+- Por status (Todos, Aguardando Pagamento, Em Preparo, Em Rota, Entregue, Cancelado)
 
 **Ordenação:**
 - Mais recentes primeiro (padrão)

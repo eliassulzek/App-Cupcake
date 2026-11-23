@@ -14,7 +14,7 @@ Projeto final do curso de Engenharia de Software, com foco em **modelagem de dad
 
 ## 🔗 Sistema Publicado
 
-> **Link da Aplicação:** `https://cupcake-delight-ebdbb888.base44.app`
+> **Link da Aplicação:** [cupcake-delight-ebdbb888.base44.app](https://cupcake-delight-ebdbb888.base44.app)
 
 ## ✨ Funcionalidades Principais
 
@@ -39,18 +39,6 @@ Projeto final do curso de Engenharia de Software, com foco em **modelagem de dad
 - **Gerenciamento de Pedidos:** visualização e atualização de status dos pedidos
 - **Sistema de Cupons:** criação e gestão de cupons de desconto
 - **Relatórios:** exportação de dados de vendas e pedidos nos formatos CSV e JSON
-
-<!--
-Capturas de tela: adicione aqui 2 ou 3 imagens das pastas docs/prints/cliente e docs/prints/admin.
-Substitua os nomes dos arquivos pelos reais.
-
-## 🖼️ Capturas de Tela
-
-| Área do Cliente | Área Administrativa |
-| --- | --- |
-| ![Catálogo](./docs/prints/cliente/NOME_DO_ARQUIVO.png) | ![Dashboard](./docs/prints/admin/NOME_DO_ARQUIVO.png) |
-
--->
 
 ## 🏗️ Arquitetura
 
