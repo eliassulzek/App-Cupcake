@@ -2,7 +2,9 @@
 
 ## 📋 Visão Geral
 
-O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes e administradores, proporcionando uma experiência de e-commerce moderna e eficiente.
+Este documento descreve as funcionalidades do **App Cupcakes**, desenvolvido na plataforma no-code Base44.
+
+> Itens marcados com **(Não Implementado)** estavam previstos, mas não existem na versão publicada. O pagamento é simulado (apenas Pix) e não há integração com serviços de entrega.
 
 ---
 
@@ -254,7 +256,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Botão "Ver Detalhes"
 
 - **Filtros:**
-  - Por status (Todos, Pendente, Em Andamento, Entregue, Cancelado)
+  - Por status (Todos, Aguardando Pagamento, Em Preparo, Em Rota, Entregue, Cancelado)
   - Por data (Última semana, Último mês, Último ano)
 
 - **Detalhes do Pedido:**
@@ -440,7 +442,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 2. **Total de Pedidos (Hoje)**
    - Quantidade de pedidos
-   - Quantidade de pedidos Pendentes
+   - Quantidade de pedidos Aguardando Pagamento
 
 3. **Produtos**
    - Quantidade total de produtos
@@ -668,7 +670,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
   - Ações
 
 **Filtros:**
-- Por status (Todos, Aguardando, Preparo, Em Rota, Entregue, Cancelado)
+- Por status (Todos, Aguardando Pagamento, Em Preparo, Em Rota, Entregue, Cancelado)
 
 **Ordenação:**
 - Mais recentes primeiro (padrão)
@@ -727,7 +729,7 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 **Opções de Status:**
 1. **Aguardando Pagamento** → **Em Preparo**
 2. **Em Preparo** → **Em Rota**
-3. **Entregue** → **Cancelado**
+3. **Em Rota** → **Entregue**
 4. Qualquer status → **Cancelado**
 
 **Regras:** (Não Implementado)
@@ -762,10 +764,10 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 3. Admin pode filtrar por status/data
 4. Admin clica em um pedido para ver detalhes
 5. Admin atualiza status conforme preparação/entrega:
-   - Pedido Recebido → marca como "Preparando"
-   - Pedido Pronto → marca como "Em Entrega"
+   - Pedido Recebido → marca como "Em Preparo"
+   - Pedido Pronto → marca como "Em Rota"
    - Pedido Entregue → marca como "Entregue"
-6. Sistema registra mudança e notifica cliente (opcional)
+6. Sistema registra a mudança (notificação ao cliente: Não Implementado)
 7. Admin pode imprimir pedido ou enviar comunicação
 ```
 
@@ -971,20 +973,18 @@ O **App Cupcakes** oferece um conjunto completo de funcionalidades para clientes
 
 ---
 
-**Total: 15 módulos funcionais completos**
+**Total: 15 módulos. Alguns possuem itens parcialmente implementados (veja as marcações "Não Implementado").**
 
 ---
 
-## 🚀 Diferenciais do Sistema
+## 🚀 Pontos Fortes
 
-- 💻 **Interface Responsiva**: Funciona em desktop, tablet e mobile
-- ⚡ **Performance**: Carregamento rápido e operações ágeis
-- 🔒 **Segurança**: Autenticação e validações em todas as operações
-- 📊 **Relatórios Completos**: Dados para tomada de decisão
-- 🎨 **Design Moderno**: Interface intuitiva e agradável
-- 🔄 **Atualizações em Tempo Real**: Status e métricas sempre atualizados
+- 💻 **Interface Responsiva**: adaptada a desktop, tablet e mobile
+- 🔒 **Controle de acesso**: autenticação e perfis separados (Cliente e Administrador)
+- 📊 **Painel administrativo**: dashboard, produtos, estoque, pedidos, cupons e relatórios
+- 📍 **Rastreamento de pedido**: timeline de status (a atualização exige recarregar a página)
 
 ---
 
 **Documentação de Funcionalidades - App Cupcakes**  
-*Última atualização: Dezembro 2025*
+*Última atualização: Novembro 2026*

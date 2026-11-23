@@ -1,176 +1,135 @@
 # 🧁 App Cupcakes
 
-[![Base44 No-Code](https://img.shields.io/badge/Built%20with-Base44-blue)](https://base44.com)
-[![Status](https://img.shields.io/badge/Status-Em%20Produção-success)]()
-[![Documentation](https://img.shields.io/badge/Docs-Completa-brightgreen)](./docs)
+![Built with Base44](https://img.shields.io/badge/Built%20with-Base44-00B4FF)
+![Status](https://img.shields.io/badge/Status-Publicado-2EA44F)
+![Docs](https://img.shields.io/badge/Docs-Completa-7CFC00)
 
-![Home] (./docs/prints/home.png)
+![Home](./docs/prints/home.png)
 
 ## 📱 Sobre o Projeto
 
-O **App Cupcakes** é uma plataforma completa de e-commerce especializada na venda de cupcakes artesanais, desenvolvida inteiramente na plataforma No-Code **Base44**. O sistema oferece uma experiência moderna e intuitiva tanto para clientes quanto para administradores.
+O **App Cupcakes** é uma plataforma de e-commerce especializada na venda de cupcakes artesanais, desenvolvida inteiramente na plataforma no-code **Base44**. O sistema oferece uma experiência moderna e intuitiva tanto para clientes quanto para administradores.
 
-### 🔗 Sistema Publicado
+Projeto final do curso de Engenharia de Software, com foco em **modelagem de dados, arquitetura, documentação e testes**.
 
-> **Link da Aplicação (Produção):** `https://cupcake-delight-ebdbb888.base44.app`
+## 🔗 Sistema Publicado
 
----
+> **Link da Aplicação:** [cupcake-delight-ebdbb888.base44.app](https://cupcake-delight-ebdbb888.base44.app)
 
 ## ✨ Funcionalidades Principais
 
 ### 👥 Área do Cliente
 
-- **Catálogo de Produtos**: Visualização completa dos cupcakes disponíveis com fotos e descrições
-- **Busca e Filtros**: Sistema de busca inteligente com filtros por categoria, preço e sabor
-- **Carrinho de Compras**: Adição, remoção e ajuste de quantidades
-- **Checkout Simplificado**: Processo de compra rápido e intuitivo
-- **Pagamento Simulado**: Sistema de pagamento para demonstração (Pix, Cartão, Boleto)
-- **Histórico de Pedidos**: Acompanhamento completo de todas as compras
-- **Status em Tempo Real**: Rastreamento do pedido (Aguardando Pagamento → Em Preparo → Em Rota → Entregue)
-- **Sistema de Avaliações**: Avaliação de produtos e experiência de compra
-- **Perfil do Usuário**: Gerenciamento de dados pessoais e endereços
+- **Catálogo de Produtos:** visualização completa dos cupcakes disponíveis, com fotos e descrições
+- **Busca e Filtros:** busca com filtros por categoria, preço e sabor
+- **Carrinho de Compras:** adição, remoção e ajuste de quantidades
+- **Checkout Simplificado:** processo de compra rápido e intuitivo
+- **Pagamento Simulado:** sistema de pagamento para demonstração (Pix, Cartão, Boleto)
+- **Histórico de Pedidos:** acompanhamento completo de todas as compras
+- **Status em Tempo Real:** rastreamento do pedido (Aguardando Pagamento → Em Preparo → Em Rota → Entregue)
+- **Sistema de Avaliações:** avaliação de produtos e da experiência de compra
+- **Perfil do Usuário:** gerenciamento de dados pessoais e endereços
 
 ### 🔧 Área Administrativa
 
-- **Dashboard Analítico**: Visão geral de vendas, pedidos e performance
-- **Gráficos e Métricas**: Análise visual de vendas por período, produtos mais vendidos
-- **CRUD de Produtos**: Cadastro completo de cupcakes (nome, descrição, preço, imagem, categoria)
-- **Gestão de Estoque**: Controle de quantidade disponível e alertas de estoque baixo
-- **Gerenciamento de Pedidos**: Visualização e atualização de status dos pedidos
-- **Sistema de Cupons**: Criação e gestão de cupons de desconto
-- **Relatórios**: Exportação de dados de vendas e pedidos nos formatos CSV e JSON
-
----
+- **Dashboard Analítico:** visão geral de vendas, pedidos e performance
+- **Gráficos e Métricas:** análise visual de vendas por período e produtos mais vendidos
+- **CRUD de Produtos:** cadastro completo de cupcakes (nome, descrição, preço, imagem, categoria)
+- **Gestão de Estoque:** controle de quantidade disponível e alertas de estoque baixo
+- **Gerenciamento de Pedidos:** visualização e atualização de status dos pedidos
+- **Sistema de Cupons:** criação e gestão de cupons de desconto
+- **Relatórios:** exportação de dados de vendas e pedidos nos formatos CSV e JSON
 
 ## 🏗️ Arquitetura
 
-O App Cupcakes utiliza a arquitetura serverless e a infraestrutura No-Code da Base44, permitindo desenvolvimento rápido, escalabilidade automática e deploy sem necessidade de configuração de servidores.
+O App Cupcakes utiliza arquitetura serverless e a infraestrutura no-code da Base44, permitindo desenvolvimento rápido, escalabilidade automática e deploy sem configuração de servidores.
 
-- **Frontend**: Interface responsiva gerada automaticamente pela Base44
-- **Backend**: API REST serverless com lógica de negócios configurada visualmente
-- **Banco de Dados**: PostgreSQL gerenciado (relacional)
-- **Autenticação**: Sistema de login e controle de acesso nativo da Base44
-- **Deploy**: Publicação automática e hospedagem em infraestrutura cloud
+- **Frontend:** interface responsiva gerada automaticamente pela Base44
+- **Backend:** API REST serverless, com lógica de negócio configurada visualmente
+- **Banco de Dados:** PostgreSQL gerenciado (relacional)
+- **Autenticação:** sistema de login e controle de acesso nativo da Base44
+- **Deploy:** publicação automática e hospedagem em infraestrutura cloud
 
-> 📖 Para detalhes completos da arquitetura, consulte: [docs/arquitetura.md](./docs/arquitetura.md)
+> 📖 Para detalhes completos da arquitetura, consulte [docs/arquitetura.md](./docs/arquitetura.md)
 
----
-
-## 📂 Estrutura do Repositório
+## 📁 Estrutura do Repositório
 
 ```
 app-cupcakes/
 │
-├─ README.md                          # Este arquivo
+├── README.md                    # Este arquivo
 │
-├─ docs/                              # Documentação completa do projeto
-│  ├─ AVISO.md                        # Informações sobre código-fonte
-│  ├─ arquitetura.md                  # Arquitetura detalhada do sistema
-│  ├─ modelagem-de-dados.md           # Esquema do banco de dados
-│  ├─ funcionalidades.md              # Documentação de todas as funcionalidades
-│  ├─ testes.md                       # Casos de teste e resultados
-│  ├─ laudo-de-qualidade.md           # Relatório de qualidade do sistema
-│  └─ prints/                         # Capturas de tela
-│      ├─ cliente/                    # Telas da área do cliente
-│      └─ admin/                      # Telas da área administrativa
-│
-└─ pit/                               # Documentos do PIT (Projeto Integrador)
-   ├─ PIT_respostas.md                # Respostas completas do PIT
-   └─ video_roteiro.md                # Roteiro para vídeo de apresentação
+└── docs/                        # Documentação completa do projeto
+    ├── AVISO.md                 # Informações sobre o código-fonte
+    ├── arquitetura.md           # Arquitetura detalhada do sistema
+    ├── modelagem-de-dados.md    # Esquema do banco de dados
+    ├── funcionalidades.md       # Documentação de todas as funcionalidades
+    ├── testes.md                # Casos de teste e resultados
+    ├── laudo-de-qualidade.md    # Relatório de qualidade do sistema
+    └── prints/                  # Capturas de tela
+        ├── cliente/             # Telas da área do cliente
+        └── admin/               # Telas da área administrativa
 ```
-
----
 
 ## 📚 Documentação
 
-Toda a documentação técnica e funcional do projeto está organizada na pasta [`/docs`](./docs):
+Toda a documentação técnica e funcional está na pasta [`/docs`](./docs):
 
-- **[AVISO.md](./docs/AVISO.md)**: Informações importantes sobre a natureza No-Code do projeto
-- **[arquitetura.md](./docs/arquitetura.md)**: Descrição técnica da arquitetura e infraestrutura
-- **[modelagem-de-dados.md](./docs/modelagem-de-dados.md)**: Modelo completo do banco de dados
-- **[funcionalidades.md](./docs/funcionalidades.md)**: Documentação detalhada de todas as features
-- **[testes.md](./docs/testes.md)**: Plano de testes, casos de teste e resultados
-- **[laudo-de-qualidade.md](./docs/laudo-de-qualidade.md)**: Avaliação da qualidade do sistema
+- [**AVISO.md**](./docs/AVISO.md): informações importantes sobre a natureza no-code do projeto
+- [**arquitetura.md**](./docs/arquitetura.md): descrição técnica da arquitetura e da infraestrutura
+- [**modelagem-de-dados.md**](./docs/modelagem-de-dados.md): modelo completo do banco de dados
+- [**funcionalidades.md**](./docs/funcionalidades.md): documentação detalhada de todas as funcionalidades
+- [**testes.md**](./docs/testes.md): plano de testes, casos de teste e resultados
+- [**laudo-de-qualidade.md**](./docs/laudo-de-qualidade.md): avaliação da qualidade do sistema
 
----
+## ⚠️ Importante: Código-Fonte
 
-## 🔴 Importante: Código-Fonte
+> **Este repositório contém apenas DOCUMENTAÇÃO.**
 
-> ⚠️ **Este repositório contém apenas DOCUMENTAÇÃO**
+A Base44 é uma plataforma no-code que não permite a exportação de código-fonte. Todo o desenvolvimento foi realizado por interface visual, com configurações e lógica de negócio definidas diretamente na plataforma.
 
-A plataforma **Base44** é uma ferramenta No-Code que não permite a exportação de código-fonte. Todo o desenvolvimento foi realizado através de interface visual, com configurações e lógica de negócios definidas diretamente na plataforma.
+**O que você encontra aqui:**
 
-**O que você encontrará aqui:**
 - ✅ Documentação completa do projeto
 - ✅ Modelagem de dados e arquitetura
 - ✅ Descrição de funcionalidades
 - ✅ Casos de teste e laudos de qualidade
-- ✅ Roteiros e materiais do PIT
 
-**O que NÃO está neste repositório:**
+**O que não está neste repositório:**
+
 - ❌ Código-fonte (não exportável da Base44)
 - ❌ Arquivos de configuração de build
 - ❌ Dependências de pacotes
 
-Para mais informações, leia: [docs/AVISO.md](./docs/AVISO.md)
+Para mais informações, leia [docs/AVISO.md](./docs/AVISO.md).
 
----
+## 🚀 Como Acessar o Sistema
 
-## 📋 PIT - Projeto Integrador de Tecnologia
+O sistema está publicado na plataforma Base44. Use o link da aplicação no topo deste documento.
 
-Os arquivos relacionados ao Projeto Integrador estão na pasta [`/pit`](./pit):
+**Área do cliente:** crie sua própria conta pela tela de cadastro. A Base44 usa verificação por e-mail (código de autenticação), por isso não são fornecidas contas de demonstração.
 
-- **[PIT_respostas.md](./pit/PIT_respostas.md)**: Respostas completas para todas as questões do PIT
-- **[video_roteiro.md](./pit/video_roteiro.md)**: Roteiro estruturado para o vídeo de apresentação
+**Área administrativa:** a autenticação administrativa é gerenciada pela Base44 e apenas o proprietário possui essa permissão. As funcionalidades do painel estão documentadas em [docs/funcionalidades.md](./docs/funcionalidades.md) e nas capturas de tela em `docs/prints/admin`.
 
----
+## 🧑‍💻 Desenvolvimento
 
-## 🚀 Como Visualizar o Sistema
-
-O sistema está publicado e acessível através da plataforma Base44. Utilize o link fornecido acima para acessar a aplicação em produção.
-
-### Credenciais para Teste (Cliente)
-O avaliador pode também criar sua própria conta via interface de cadastro.
-
-A plataforma Base44 utiliza verificação por e-mail (código de autenticação).
-Por esse motivo, contas de demonstração não são fornecidas, já que não seria possível
-receber o código de verificação em e-mails fictícios.
-
-### Credenciais de Administrador
-A autenticação administrativa é gerenciada pela Base44.
-Apenas o Owner possui permissões de administrador.
-As funcionalidades do painel admin serão demonstradas no vídeo do PIT.
-
----
-
-## 👨‍💻 Desenvolvimento
-
-**Plataforma**: Base44 No-Code Platform  
-**Tipo de Projeto**: E-commerce de Cupcakes  
-**Modelo**: B2C (Business to Consumer)  
-**Ambiente**: Cloud (Serverless)
-
----
+- **Plataforma:** Base44 No-Code Platform
+- **Tipo de projeto:** e-commerce de cupcakes
+- **Modelo:** B2C (Business to Consumer)
+- **Ambiente:** cloud (serverless)
 
 ## 📞 Contato
 
-Desenvolvedor: Elias Gonçalves Sulzek  
+**Elias Gonçalves Sulzek**
 
-RGM: 30152267
-
-E-mail para contato acadêmico: elias.sulzek@cs.up.edu.br
-
-Linkedin: https://www.linkedin.com/in/elias-sulzek-26b259233/
-
-GitHub: https://github.com/eliassulzek
-
----
+- E-mail: [eliasgoncalves3107@gmail.com](mailto:eliasgoncalves3107@gmail.com)
+- LinkedIn: [linkedin.com/in/elias-sulzek-26b259233](https://www.linkedin.com/in/elias-sulzek-26b259233/)
+- GitHub: [github.com/eliassulzek](https://github.com/eliassulzek)
 
 ## 📄 Licença
 
-Este repositório é destinado exclusivamente para fins acadêmicos.
-Não possui fins comerciais e não inclui código-fonte exportável.
+Projeto acadêmico, sem fins comerciais. Este repositório não inclui código-fonte exportável.
 
 ---
 
-**Desenvolvido por Elias Gonçalves Sulzek usando Base44 No-Code Platform**
+Desenvolvido por Elias Gonçalves Sulzek usando a plataforma no-code Base44.

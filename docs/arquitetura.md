@@ -2,7 +2,9 @@
 
 ## 📋 Visão Geral
 
-O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **no-code** da plataforma **Base44**, seguindo princípios modernos de desenvolvimento cloud-native com foco em escalabilidade, segurança e manutenibilidade.
+O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **no-code** da plataforma **Base44**, com foco em escalabilidade, segurança e manutenibilidade dentro do que a plataforma oferece.
+
+> **Nota:** este documento descreve o sistema do ponto de vista do projeto. Detalhes internos da plataforma (infraestrutura, segurança, backup, disponibilidade) são gerenciados pela Base44 e **não foram auditados** neste projeto. Para informações oficiais, consulte a documentação da Base44.
 
 ---
 
@@ -18,8 +20,8 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 ┌─────────────────────────────────────────────────────────────────┐
 │                      FRONTEND (Base44)                           │
 │  • Interface Responsiva                                          │
-│  • Single Page Application (SPA)                                 │
-│  • React/Vue (gerado automaticamente)                            │
+│  • Aplicação web responsiva                                      │
+│  • Gerado pela plataforma (no-code)                              │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -44,7 +46,7 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 │               BANCO DE DADOS (PostgreSQL)                        │
 │  • Tabelas Relacionais                                           │
 │  • Constraints e Índices                                         │
-│  • Backup Automático                                             │
+│  • Backup gerenciado                                             │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -54,10 +56,9 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 
 ### Tecnologias Base44
 
-- **Framework**: Interface gerada automaticamente pela Base44
-- **Paradigma**: Single Page Application (SPA)
-- **Responsividade**: Design adaptável automático (Desktop, Tablet, Mobile)
-- **Estado**: Gerenciamento de estado nativo da plataforma
+- **Framework**: interface gerada pela plataforma Base44
+- **Responsividade**: design adaptável (Desktop, Tablet, Mobile)
+- **Implementação**: gerenciada pela plataforma, sem código manual
 
 ### Componentes Principais
 
@@ -83,7 +84,7 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 - **Checkout**
   - Formulário de dados pessoais
   - Seleção de endereço de entrega
-  - Escolha de método de pagamento
+  - Escolha de método de pagamento (simulado)
   - Aplicação de cupom de desconto
   - Resumo do pedido
 
@@ -124,7 +125,7 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 - **Relatórios**
   - Vendas por período
   - Produtos mais vendidos
-  - Exportação de dados
+  - Exportação de dados (CSV e JSON)
 
 ---
 
@@ -132,16 +133,15 @@ O **App Cupcakes** foi desenvolvido utilizando a arquitetura **serverless** e **
 
 ### Arquitetura Serverless Base44
 
-O backend é completamente gerenciado pela plataforma Base44, seguindo uma arquitetura **serverless**:
+O backend é gerenciado pela plataforma Base44, em modelo **serverless**:
 
-- **Funções sob Demanda**: Não há servidores fixos rodando
-- **Escalabilidade Automática**: Recursos alocados conforme necessidade
-- **Alta Disponibilidade**: Infraestrutura distribuída
-- **Custo Otimizado**: Pagamento apenas pelo uso real
+- **Funções sob demanda**: não há servidores próprios para administrar
+- **Escalabilidade**: gerenciada pela plataforma
+- **Sem configuração de infraestrutura**: o desenvolvimento foca nas regras de negócio
 
-### API REST Gerada Automaticamente
+### API REST
 
-A Base44 gera automaticamente endpoints RESTful para cada entidade:
+A plataforma disponibiliza operações RESTful para cada entidade. O quadro abaixo é uma **representação conceitual** das operações do sistema. Os nomes e rotas reais são gerenciados pela Base44:
 
 ```
 /api/produtos
@@ -200,13 +200,13 @@ Implementada visualmente na Base44:
         ↓
    Atualiza estoque dos produtos
         ↓
-   Gera registro de pagamento
+   Gera registro de pagamento (simulado)
         ↓
    Retorna confirmação ao cliente
    ```
 
 4. **Controle de Status**
-   - Pedidos: Pendente → Preparando → Em Entrega → Entregue → Cancelado
+   - Pedidos: Aguardando Pagamento → Em Preparo → Em Rota → Entregue → Cancelado
    - Pagamentos: Pendente → Aprovado → Recusado
    - Produtos: Ativo → Inativo
 
@@ -217,21 +217,20 @@ Implementada visualmente na Base44:
 ### Banco de Dados Relacional (PostgreSQL)
 
 - **Tipo**: PostgreSQL gerenciado pela Base44
-- **Localização**: Cloud (infraestrutura Base44)
-- **Backup**: Automático e periódico
-- **Replicação**: Gerenciada pela plataforma
+- **Localização**: cloud (infraestrutura da Base44)
+- **Backup e replicação**: responsabilidade da plataforma, sem configuração própria neste projeto
 
 ### Estrutura de Tabelas
 
 #### Principais Entidades
 
-| Tabela | Descrição | Registros Esperados |
-|--------|-----------|---------------------|
+| Tabela | Descrição | Volume estimado (hipotético) |
+|--------|-----------|------------------------------|
 | `cliente` | Dados dos usuários clientes | Milhares |
 | `produto` | Catálogo de cupcakes | Dezenas |
 | `pedido` | Pedidos realizados | Milhares |
 | `pedido_item` | Itens de cada pedido | Dezenas de milhares |
-| `pagamento` | Registros de pagamento | Milhares |
+| `pagamento` | Registros de pagamento (simulado) | Milhares |
 | `avaliacao` | Avaliações dos clientes | Milhares |
 | `cupom` | Cupons de desconto | Centenas |
 
@@ -263,17 +262,15 @@ produto (1) ──────── (N) avaliacao ──────── (1) 
 
 ### Sistema de Autenticação
 
-A Base44 fornece sistema de autenticação integrado:
+O sistema usa a autenticação integrada da Base44:
 
 - **Registro de Usuários**
-  - Criação de conta com email/senha
-  - Validação de email único
-  - Criptografia automática de senhas
+  - Criação de conta com verificação por e-mail (código de autenticação)
+  - Validação de e-mail único
 
 - **Login/Logout**
   - Autenticação por credenciais
-  - Geração de token de sessão
-  - Expiração automática de sessão
+  - Controle de sessão gerenciado pela plataforma
 
 - **Controle de Acesso (RBAC)**
   - **Role: Cliente**
@@ -281,7 +278,7 @@ A Base44 fornece sistema de autenticação integrado:
     - Visualização de produtos
     - Gestão do próprio perfil
     - Criação e visualização dos próprios pedidos
-  
+
   - **Role: Administrador**
     - Acesso total ao painel admin
     - CRUD completo de produtos
@@ -291,20 +288,13 @@ A Base44 fornece sistema de autenticação integrado:
 
 ### Segurança
 
-1. **Proteção de Dados**
-   - Senhas criptografadas (hash)
-   - Comunicação HTTPS obrigatória
-   - Tokens de sessão seguros
+Os mecanismos de segurança da camada de autenticação e da infraestrutura (armazenamento de senhas, sessões, HTTPS, proteção contra ataques comuns) são fornecidos pela plataforma e **não foram auditados** neste projeto.
 
-2. **Validações Backend**
-   - Todas as entradas são validadas no servidor
-   - Proteção contra SQL Injection (ORM da Base44)
-   - Sanitização de dados
+No escopo do projeto foram aplicados:
 
-3. **Proteção de Rotas**
-   - Rotas administrativas protegidas por role
-   - Verificação de token em cada requisição
-   - Logout automático em caso de token inválido
+1. **Validações de entrada** configuradas nos formulários e nas regras de negócio
+2. **Proteção de rotas administrativas** por role (Cliente/Administrador)
+3. **Pagamento simulado**: nenhum dado de cartão ou financeiro real é processado
 
 ---
 
@@ -312,10 +302,9 @@ A Base44 fornece sistema de autenticação integrado:
 
 ### Infraestrutura Base44
 
-- **Hospedagem**: Cloud gerenciada pela Base44
-- **CDN**: Distribuição de conteúdo estático
-- **SSL/TLS**: Certificado automático (HTTPS)
-- **Domínio**: Subdomínio Base44 ou domínio customizado
+- **Hospedagem**: cloud gerenciada pela Base44
+- **Domínio**: subdomínio da Base44 (`*.base44.app`)
+- **Protocolo**: HTTPS
 
 ### Processo de Deploy
 
@@ -324,18 +313,14 @@ Desenvolvimento Visual na Base44
         ↓
 Teste em Ambiente de Preview
         ↓
-Publicação com Um Clique
-        ↓
-Deploy Automático para Produção
+Publicação pela plataforma
         ↓
 Sistema Disponível Online
 ```
 
 ### Monitoramento
 
-- **Logs de Aplicação**: Registrados pela Base44
-- **Uptime**: Monitorado pela plataforma
-- **Métricas**: Disponíveis no painel Base44
+Logs e métricas estão disponíveis conforme o painel da plataforma. Não foi configurado monitoramento próprio.
 
 ---
 
@@ -352,7 +337,7 @@ Sistema Disponível Online
 6. Preenche/confirma dados pessoais
 7. Seleciona endereço de entrega
 8. Aplica cupom de desconto (opcional)
-9. Escolhe método de pagamento
+9. Escolhe método de pagamento (simulado)
 10. Finaliza pedido
 11. Sistema cria pedido no banco
 12. Atualiza estoque dos produtos
@@ -365,11 +350,11 @@ Sistema Disponível Online
 
 ```
 1. Admin acessa painel administrativo
-2. Visualiza novos pedidos (status: Pendente)
+2. Visualiza novos pedidos (status: Aguardando Pagamento)
 3. Revisa detalhes do pedido
-4. Atualiza status para "Preparando"
+4. Atualiza status para "Em Preparo"
 5. Prepara o pedido
-6. Atualiza status para "Em Entrega"
+6. Atualiza status para "Em Rota"
 7. Após entrega, atualiza para "Entregue"
 8. Sistema registra histórico de mudanças
 ```
@@ -397,38 +382,24 @@ Sistema Disponível Online
 
 ### Internas (Base44)
 
-- **Autenticação**: Sistema nativo
-- **Upload de Arquivos**: Armazenamento Base44
-- **Emails**: Sistema de notificações (se habilitado)
+- **Autenticação**: sistema nativo
+- **Upload de Arquivos**: armazenamento da Base44
+- **E-mails**: verificação de conta pela plataforma
 
-### Externas (Potenciais)
+### Externas (não implementadas)
 
-- **Gateway de Pagamento**: Simulado no sistema atual
-  - Pode ser integrado com Stripe, PagSeguro, MercadoPago
-- **Sistema de Entregas**: Não implementado
-  - Possível integração com Correios, Loggi, etc.
-- **Análise**: Não implementado
+- **Gateway de Pagamento**: pagamento simulado no sistema atual
+  - Poderia ser integrado a Stripe, PagSeguro, Mercado Pago
+- **Sistema de Entregas**: não implementado
+  - Possível integração com serviços de entrega
+- **Análise**: não implementado
   - Possível integração com Google Analytics
 
 ---
 
 ## 📈 Escalabilidade
 
-### Vantagens da Arquitetura Serverless
-
-1. **Escalabilidade Horizontal Automática**
-   - Base44 aumenta recursos conforme demanda
-   - Sem limite rígido de usuários simultâneos
-
-2. **Performance**
-   - CDN para assets estáticos
-   - Cache automático de queries comuns
-   - Otimização de banco de dados
-
-3. **Disponibilidade**
-   - Múltiplas zonas de disponibilidade
-   - Redundância automática
-   - SLA garantido pela Base44
+Em um modelo serverless gerenciado, a escalabilidade e a disponibilidade dependem da plataforma e do plano contratado. Este projeto **não realizou testes de carga**, e portanto não há medições de capacidade.
 
 ---
 
@@ -436,20 +407,19 @@ Sistema Disponível Online
 
 ### Stack Tecnológico
 
-| Camada | Tecnologia | Versão/Detalhes |
-|--------|-----------|-----------------|
-| **Frontend** | Base44 Framework | Última versão |
-| **Backend** | Base44 Serverless | Cloud-native |
+| Camada | Tecnologia | Detalhes |
+|--------|-----------|----------|
+| **Frontend** | Interface gerada pela Base44 | No-code |
+| **Backend** | Base44 Serverless | Gerenciado |
 | **Banco de Dados** | PostgreSQL | Gerenciado |
-| **Autenticação** | Base44 Auth | Integrado |
-| **Hospedagem** | Base44 Cloud | Global |
-| **Protocolo** | HTTPS | TLS 1.3 |
+| **Autenticação** | Base44 Auth | Integrada |
+| **Hospedagem** | Base44 Cloud | Gerenciada |
+| **Protocolo** | HTTPS | - |
 
 ### Dependências Externas
 
-- **Nenhuma**: Sistema 100% contido na Base44
-- **Imagens**: Armazenadas na infraestrutura Base44
-- **Assets**: Servidos via CDN Base44
+- **Nenhuma**: sistema contido na Base44
+- **Imagens**: armazenadas na infraestrutura da Base44
 
 ---
 
@@ -457,34 +427,31 @@ Sistema Disponível Online
 
 ### Vantagens da Arquitetura Escolhida
 
-✅ **Desenvolvimento Rápido**: Prototipagem e implementação ágil  
-✅ **Manutenção Simplificada**: Infraestrutura gerenciada  
-✅ **Custo Previsível**: Modelo de precificação transparente  
-✅ **Segurança**: Práticas de segurança embutidas  
-✅ **Atualizações Automáticas**: Plataforma sempre atualizada  
+✅ **Desenvolvimento Rápido**: prototipagem e implementação ágil  
+✅ **Manutenção Simplificada**: infraestrutura gerenciada  
+✅ **Foco no negócio**: tempo dedicado a requisitos, dados e testes  
 
 ### Limitações
 
-⚠️ **Customização**: Limitada às capacidades da Base44  
-⚠️ **Vendor Lock-in**: Dependência da plataforma  
-⚠️ **Portabilidade**: Código não exportável  
-⚠️ **Integrações**: Dependente do suporte da Base44  
+⚠️ **Customização**: limitada às capacidades da Base44  
+⚠️ **Vendor Lock-in**: dependência da plataforma  
+⚠️ **Portabilidade**: código não exportável  
+⚠️ **Integrações**: dependentes do suporte da Base44  
+⚠️ **Pagamento e entrega**: apenas simulados/não implementados  
 
 ---
 
 ## 🎯 Conclusão
 
-A arquitetura do **App Cupcakes** foi desenhada para ser:
+A arquitetura do **App Cupcakes** foi pensada para ser:
 
-- **Simples**: Fácil de entender e manter
-- **Robusta**: Confiável e escalável
-- **Moderna**: Utilizando tecnologias cloud-native
-- **Segura**: Com proteções em todas as camadas
-- **Eficiente**: Otimizada para performance
+- **Simples**: fácil de entender e manter
+- **Documentada**: com modelo de dados, fluxos e testes descritos
+- **Adequada ao contexto acadêmico**: foco em análise de requisitos e modelagem
 
-A escolha da plataforma Base44 permitiu focar nas funcionalidades de negócio, entregando um produto completo e profissional sem a complexidade de gerenciar infraestrutura.
+A escolha da plataforma Base44 permitiu concentrar o esforço nas funcionalidades de negócio, sem a complexidade de gerenciar infraestrutura.
 
 ---
 
 **Documentação Técnica - App Cupcakes**  
-*Última atualização: Dezembro 2025*
+*Última atualização: Novembro 2026*
