@@ -2,7 +2,9 @@
 
 ## 📋 Visão Geral
 
-Este documento descreve a estrutura completa do banco de dados do sistema **App Cupcakes**, incluindo todas as tabelas, colunas, tipos de dados, constraints e relacionamentos.
+Este documento descreve a estrutura completa do banco de dados do sistema **App Cupcakes**, incluindo tabelas, colunas, tipos de dados, constraints e relacionamentos.
+
+> **Nota:** este é um **modelo de referência (conceitual/lógico)** elaborado para o projeto. A Base44 gerencia o banco internamente, e os nomes, tipos e constraints reais das entidades podem diferir. O acesso direto ao banco não estava disponível na plataforma.
 
 ---
 
@@ -53,7 +55,6 @@ Armazena os dados dos usuários clientes do sistema.
 | `id` | INTEGER | - | PRIMARY KEY, AUTO_INCREMENT | Identificador único do cliente |
 | `nome` | VARCHAR | 100 | NOT NULL | Nome completo do cliente |
 | `email` | VARCHAR | 100 | NOT NULL, UNIQUE | Email para login e contato |
-| `senha` | VARCHAR | 255 | NOT NULL | Senha criptografada (hash) |
 | `cpf` | VARCHAR | 14 | NOT NULL, UNIQUE | CPF do cliente (formato: 000.000.000-00) |
 | `telefone` | VARCHAR | 20 | NOT NULL | Telefone de contato |
 | `data_nascimento` | DATE | - | NULL | Data de nascimento do cliente |
@@ -116,7 +117,7 @@ Registra os pedidos realizados pelos clientes.
 | `cliente_id` | INTEGER | - | NOT NULL, FOREIGN KEY | Referência ao cliente que fez o pedido |
 | `cupom_id` | INTEGER | - | NULL, FOREIGN KEY | Referência ao cupom utilizado (se houver) |
 | `data_pedido` | TIMESTAMP | - | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Data e hora do pedido |
-| `status` | VARCHAR | 20 | NOT NULL, DEFAULT 'Pendente' | Status atual (Pendente, Preparando, Em Entrega, Entregue, Cancelado) |
+| `status` | VARCHAR | 20 | NOT NULL, DEFAULT 'Aguardando Pagamento' | Status atual (Aguardando Pagamento, Em Preparo, Em Rota, Entregue, Cancelado) |
 | `valor_subtotal` | DECIMAL | 10,2 | NOT NULL, CHECK (valor_subtotal >= 0) | Soma dos itens antes do desconto |
 | `valor_desconto` | DECIMAL | 10,2 | NOT NULL, DEFAULT 0, CHECK (valor_desconto >= 0) | Valor do desconto aplicado |
 | `valor_total` | DECIMAL | 10,2 | NOT NULL, CHECK (valor_total >= 0) | Valor final do pedido |
@@ -329,7 +330,7 @@ ALTER TABLE avaliacao
 
 ---
 
-## 📈 Estimativas de Volume de Dados
+## 📈 Estimativas de Volume de Dados (hipotéticas)
 
 | Tabela | Crescimento | Estimativa (1 ano) |
 |--------|-------------|-------------------|
@@ -431,14 +432,14 @@ LIMIT 10;
 
 ## 🛡️ Segurança e Integridade
 
-### Validações Implementadas
+### Regras previstas no modelo
 
 1. **Integridade Referencial**: Todas as chaves estrangeiras garantem consistência
 2. **Constraints de Domínio**: Verificações de valores válidos (ex: status, notas)
 3. **Checks de Valores**: Garantia de valores positivos para preços e quantidades
 4. **Unicidade**: Emails, e códigos de cupom únicos
 
-### Triggers Recomendados (Base44)
+### Regras de negócio esperadas
 
 1. **Atualizar Estoque**: Reduzir estoque automaticamente ao criar pedido
 2. **Calcular Subtotal**: Calcular automaticamente o subtotal de pedido_item
@@ -459,7 +460,6 @@ O banco de dados está na **3ª Forma Normal (3FN)**:
 - Minimização de redundância
 - Facilidade de manutenção
 - Integridade dos dados
-- Performance otimizada para consultas
 
 ---
 
@@ -470,12 +470,11 @@ Esta modelagem de dados foi projetada para:
 - **Suportar todas as funcionalidades** do App Cupcakes
 - **Garantir integridade** e consistência dos dados
 - **Facilitar consultas** e relatórios
-- **Permitir escalabilidade** conforme crescimento do negócio
-- **Manter performance** mesmo com grande volume de dados
+- **Permitir evolução** do sistema com novas funcionalidades
 
-A estrutura é robusta, normalizada e preparada para um sistema de e-commerce profissional.
+Por ser um modelo de referência, serve de base para entender e reconstruir o sistema em outra tecnologia.
 
 ---
 
 **Modelagem de Dados - App Cupcakes**  
-*Última atualização: Dezembro 2025*
+*Última atualização: Novembro 2026*

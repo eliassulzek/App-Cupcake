@@ -206,7 +206,7 @@ Implementada visualmente na Base44:
    ```
 
 4. **Controle de Status**
-   - Pedidos: Pendente → Preparando → Em Entrega → Entregue → Cancelado
+   - Pedidos: Aguardando Pagamento → Em Preparo → Em Rota → Entregue → Cancelado
    - Pagamentos: Pendente → Aprovado → Recusado
    - Produtos: Ativo → Inativo
 
@@ -350,11 +350,11 @@ Logs e métricas estão disponíveis conforme o painel da plataforma. Não foi c
 
 ```
 1. Admin acessa painel administrativo
-2. Visualiza novos pedidos (status: Pendente)
+2. Visualiza novos pedidos (status: Aguardando Pagamento)
 3. Revisa detalhes do pedido
-4. Atualiza status para "Preparando"
+4. Atualiza status para "Em Preparo"
 5. Prepara o pedido
-6. Atualiza status para "Em Entrega"
+6. Atualiza status para "Em Rota"
 7. Após entrega, atualiza para "Entregue"
 8. Sistema registra histórico de mudanças
 ```
