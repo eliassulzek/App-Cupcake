@@ -4,7 +4,7 @@
 
 Este documento registra os testes manuais realizados no sistema **App Cupcakes**, os bugs encontrados durante o desenvolvimento e as correções aplicadas.
 
-> Os testes foram **manuais**, executados pelo próprio desenvolvedor, sem automação e sem avaliação de terceiros. Os dados usados (nomes, e-mails, CPF) são fictícios.
+> Os testes foram **manuais**, executados pelo próprio desenvolvedor, sem automação e sem avaliação de terceiros. Os dados usados (nomes, e-mails, telefones e endereços) são fictícios.
 
 ---
 
@@ -20,7 +20,7 @@ Este documento registra os testes manuais realizados no sistema **App Cupcakes**
 ## 📝 Metodologia
 
 1. **Testes funcionais manuais**: fluxos completos de uso e regras de negócio (carrinho, checkout, cupons, pedidos)
-2. **Testes de validação**: campos obrigatórios e formatos (e-mail, CPF, telefone)
+2. **Testes de validação**: campos obrigatórios e formatos (e-mail, telefone, CEP)
 3. **Testes de responsividade**: verificação visual em desktop, tablet e celular
 4. **Testes de acesso**: conferência de que o cliente não acessa o painel administrativo
 
@@ -50,11 +50,11 @@ O pagamento é **simulado** (apenas Pix), então o fluxo de pagamento real não 
 | Campo | Conteúdo |
 |-------|----------|
 | **Módulo** | Autenticação - Cadastro |
-| **Caso de Teste** | Cadastro de novo cliente com dados válidos |
-| **Pré-condições** | Usuário não está logado; acesso à página de cadastro |
-| **Passos** | 1. Acessar a página de cadastro<br>2. Preencher nome, e-mail, CPF e telefone (dados fictícios)<br>3. Preencher e confirmar a senha<br>4. Preencher o endereço<br>5. Clicar em "Cadastrar" |
-| **Resultado Esperado** | Sistema valida os dados, cria a conta e redireciona para o catálogo ou login |
-| **Resultado Obtido** | Conta criada com sucesso; usuário redirecionado ao catálogo já autenticado |
+| **Caso de Teste** | Criação de conta e preenchimento do perfil |
+| **Pré-condições** | Usuário não está logado |
+| **Passos** | 1. Acessar a página de cadastro<br>2. Criar a conta pela autenticação da plataforma com e-mail fictício<br>3. Acessar "Meu Perfil" e preencher telefone, CEP, endereço, cidade e estado<br>4. Clicar em "Salvar Alterações" |
+| **Resultado Esperado** | Conta criada e dados de perfil salvos |
+| **Resultado Obtido** | Conta criada e dados do perfil salvos |
 | **Status** | ✅ **PASSOU** |
 
 ---
@@ -94,7 +94,7 @@ O pagamento é **simulado** (apenas Pix), então o fluxo de pagamento real não 
 | **Módulo** | Cliente - Checkout / Pedido |
 | **Caso de Teste** | Compra completa do início ao fim com pagamento simulado |
 | **Pré-condições** | Cliente logado; produtos com estoque |
-| **Passos** | 1. Adicionar 2 produtos ao carrinho<br>2. Ir para o checkout e confirmar dados e endereço<br>3. Escolher Pix (simulado)<br>4. Aceitar os termos<br>5. Finalizar o pedido |
+| **Passos** | 1. Adicionar 2 produtos ao carrinho<br>2. Ir para o checkout e confirmar dados e endereço<br>3. Escolher Pix (simulado)<br>4. Finalizar o pedido |
 | **Resultado Esperado** | Pedido criado; estoque atualizado; carrinho esvaziado; status "Aguardando Pagamento"; número do pedido exibido |
 | **Resultado Obtido** | Pedido criado com sucesso; estoque atualizado; carrinho esvaziado; confirmação exibida |
 | **Status** | ✅ **PASSOU** |
@@ -109,39 +109,33 @@ O pagamento é **simulado** (apenas Pix), então o fluxo de pagamento real não 
 | **Caso de Teste** | Alterar o status de "Aguardando Pagamento" para "Em Preparo" |
 | **Pré-condições** | Admin logado; pedido existente |
 | **Passos** | 1. Abrir "Gerenciamento de Pedidos"<br>2. Abrir os detalhes de um pedido<br>3. Selecionar o novo status<br>4. Clicar em "Atualizar Status" |
-| **Resultado Esperado** | Status atualizado e histórico registrado com data/hora |
-| **Resultado Obtido** | Status atualizado; histórico registrado; cliente vê o novo status ao atualizar a página |
+| **Resultado Esperado** | Status atualizado e refletido para o cliente |
+| **Resultado Obtido** | Status atualizado; cliente vê o novo status ao atualizar a página |
 | **Status** | ✅ **PASSOU** |
 
 ---
 
 ## 🐛 Bugs Encontrados Durante o Desenvolvimento
 
-### Bug #01: CPF aceito sem formatação
-**Severidade**: 🟡 Média | **Status**: ✅ Corrigido
-
-O cadastro aceitava CPF sem pontos e traço, enquanto outras telas exibiam o formato com máscara, gerando inconsistência.
-**Correção**: máscara automática de CPF nos formulários.
-
-### Bug #02: Total do carrinho não atualizava
+### Bug #01: Total do carrinho não atualizava
 **Severidade**: 🔴 Alta | **Status**: ✅ Corrigido
 
 Ao alterar a quantidade com os botões +/-, o subtotal e o total só atualizavam após recarregar a página.
 **Correção**: recálculo imediato ao alterar a quantidade.
 
-### Bug #03: Cupom expirado era aceito
+### Bug #02: Cupom expirado era aceito
 **Severidade**: 🔴 Alta | **Status**: ✅ Corrigido
 
 Cupons fora do período de validade ainda podiam ser aplicados.
-**Correção**: validação de data de início e fim ao aplicar o cupom, com a mensagem "Cupom expirado".
+**Correção**: validação da data de validade ao aplicar o cupom, com a mensagem "Cupom expirado".
 
-### Bug #04: Estoque podia ficar negativo
+### Bug #03: Estoque podia ficar negativo
 **Severidade**: 🔴 Alta | **Status**: ✅ Corrigido
 
 Pedidos feitos ao mesmo tempo podiam deixar o estoque negativo.
 **Correção**: verificação de estoque no momento da finalização do pedido, rejeitando com "Estoque insuficiente".
 
-### Bug #05: Filtro de preço retornava produtos fora da faixa
+### Bug #04: Filtro de preço retornava produtos fora da faixa
 **Severidade**: 🟡 Média | **Status**: ✅ Corrigido
 
 O filtro por faixa de preço exibia produtos fora do intervalo.
@@ -151,11 +145,10 @@ O filtro por faixa de preço exibia produtos fora do intervalo.
 
 | Bug | Descrição | Severidade | Status |
 |-----|-----------|------------|--------|
-| #01 | CPF sem formatação aceito | 🟡 Média | ✅ Corrigido |
-| #02 | Total do carrinho não atualiza | 🔴 Alta | ✅ Corrigido |
-| #03 | Cupom expirado aceito | 🔴 Alta | ✅ Corrigido |
-| #04 | Estoque negativo | 🔴 Alta | ✅ Corrigido |
-| #05 | Filtro de preço incorreto | 🟡 Média | ✅ Corrigido |
+| #01 | Total do carrinho não atualiza | 🔴 Alta | ✅ Corrigido |
+| #02 | Cupom expirado aceito | 🔴 Alta | ✅ Corrigido |
+| #03 | Estoque negativo | 🔴 Alta | ✅ Corrigido |
+| #04 | Filtro de preço incorreto | 🟡 Média | ✅ Corrigido |
 
 ---
 
